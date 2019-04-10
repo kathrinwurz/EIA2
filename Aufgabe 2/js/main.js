@@ -1,175 +1,143 @@
-/* Aufgabe: Aufgabe 11 - Shopping Clauses
-   Name: Kathrin Wurz
-   Matrikel: 260742
-   Datum: 07.04.2019
-   Der Code wurde in Zusammenarbeit mit Bastian Culig, Lisa Sanchez y Bittner, Carlotta Reinders, Daniel Mainberger und Marvin Kübler erstellt. */
+/* Aufgabe: Aufgabe 2 - Mau Mau
+    Name: Kathrin Wurz
+    Matrikel: 260742
+    Datum: 07.04.2019
+    Der Code wurde in Zusammenarbeit mit Bastian Culig, Lisa Sanchez y Bittner, Carlotta Reinders, Daniel Mainberger und Marvin Kübler erstellt. */
 /*Ass*/
 let herzAss = {
     symbol: "♥",
-    wert: "Ass",
-    imSpiel: true
+    wert: "Ass"
 };
 let karoAss = {
     symbol: "♦",
-    wert: "Ass",
-    imSpiel: true
+    wert: "Ass"
 };
 let kreuzAss = {
     symbol: "♣",
-    wert: "Ass",
-    imSpiel: true
+    wert: "Ass"
 };
 let pikAss = {
     symbol: "♠",
-    wert: "Ass",
-    imSpiel: true
+    wert: "Ass"
 };
 /*König*/
 let herzKoenig = {
     symbol: "♥",
-    wert: "Koenig",
-    imSpiel: true
+    wert: "Koenig"
 };
 let karoKoenig = {
     symbol: "♦",
-    wert: "Koenig",
-    imSpiel: true
+    wert: "Koenig"
 };
 let kreuzKoenig = {
     symbol: "♣",
-    wert: "Koenig",
-    imSpiel: true
+    wert: "Koenig"
 };
 let pikKoenig = {
     symbol: "♠",
-    wert: "Koenig",
-    imSpiel: true
+    wert: "Koenig"
 };
 /*Dame*/
 let herzDame = {
     symbol: "♥",
-    wert: "Dame",
-    imSpiel: true
+    wert: "Dame"
 };
 let karoDame = {
     symbol: "♦",
-    wert: "Dame",
-    imSpiel: true
+    wert: "Dame"
 };
 let kreuzDame = {
     symbol: "♣",
-    wert: "Dame",
-    imSpiel: true
+    wert: "Dame"
 };
 let pikDame = {
     symbol: "♠",
-    wert: "Dame",
-    imSpiel: true
+    wert: "Dame"
 };
 /*Bube*/
 let herzBube = {
     symbol: "♥",
-    wert: "Bube",
-    imSpiel: true
+    wert: "Bube"
 };
 let karoBube = {
     symbol: "♦",
-    wert: "Bube",
-    imSpiel: true
+    wert: "Bube"
 };
 let kreuzBube = {
     symbol: "♣",
-    wert: "Bube",
-    imSpiel: true
+    wert: "Bube"
 };
 let pikBube = {
     symbol: "♠",
-    wert: "Bube",
-    imSpiel: true
+    wert: "Bube"
 };
 /*10*/
 let herzZehn = {
     symbol: "♥",
-    wert: "10",
-    imSpiel: true
+    wert: "10"
 };
 let karoZehn = {
     symbol: "♦",
-    wert: "10",
-    imSpiel: true
+    wert: "10"
 };
 let kreuzZehn = {
     symbol: "♣",
-    wert: "10",
-    imSpiel: true
+    wert: "10"
 };
 let pikZehn = {
     symbol: "♠",
-    wert: "10",
-    imSpiel: true
+    wert: "10"
 };
 /*9*/
 let herzNeun = {
     symbol: "♥",
-    wert: "9",
-    imSpiel: true
+    wert: "9"
 };
 let karoNeun = {
     symbol: "♦",
-    wert: "9",
-    imSpiel: true
+    wert: "9"
 };
 let kreuzNeun = {
     symbol: "♣",
-    wert: "9",
-    imSpiel: true
+    wert: "9"
 };
 let pikNeun = {
     symbol: "♠",
-    wert: "9",
-    imSpiel: true
+    wert: "9"
 };
 /*8*/
 let herzAcht = {
     symbol: "♥",
-    wert: "8",
-    imSpiel: true
+    wert: "8"
 };
 let karoAcht = {
     symbol: "♦",
-    wert: "8",
-    imSpiel: true
+    wert: "8"
 };
 let kreuzAcht = {
     symbol: "♣",
-    wert: "8",
-    imSpiel: true
+    wert: "8"
 };
 let pikAcht = {
     symbol: "♠",
-    wert: "8",
-    imSpiel: true
+    wert: "8"
 };
 /*7*/
 let herzSieben = {
     symbol: "♥",
-    wert: "7",
-    imSpiel: true
+    wert: "7"
 };
 let karoSieben = {
     symbol: "♦",
-    wert: "7",
-    imSpiel: true
+    wert: "7"
 };
 let kreuzSieben = {
     symbol: "♣",
-    wert: "7",
-    imSpiel: true
+    wert: "7"
 };
 let pikSieben = {
     symbol: "♠",
-    wert: "7",
-    imSpiel: true
+    wert: "7"
 };
 /*Arrays Kartendeck + Handkarten*/
 let kartenDeck = [herzAss, karoAss, kreuzAss, pikAss, herzKoenig, karoKoenig, kreuzKoenig, pikKoenig, herzDame, karoDame, kreuzDame, pikDame, herzBube, karoBube, kreuzBube, pikBube, herzZehn, karoZehn, kreuzZehn, pikZehn, herzNeun, karoNeun, kreuzNeun, pikNeun, herzAcht, karoAcht, kreuzAcht, pikAcht, herzSieben, karoSieben, kreuzSieben, pikSieben];
@@ -183,51 +151,46 @@ function spielStarten() {
     } while (isNaN(anzahlHandkarten) || anzahlHandkarten > 6 || anzahlHandkarten < 4); //Wird so oft wiederholt, bis die Eingabe eine Zahl zwischen 4 und 6 ist. "isNaN" bedeutet "Is Not a Number"
     console.log("Handkarten: " + anzahlHandkarten);
     for (let i = 0; i < anzahlHandkarten; i++) {
-        anzeigeKarten();
+        zieheKarten();
     }
     console.log(handKarten);
     nachziehStapelErstellen();
     auflegeStapelErstellen();
     handKartenErstellen();
 }
-function anzeigeKarten() {
-    let aktuelleKarte = Math.floor(Math.random() * 31);
-    while (kartenDeck[aktuelleKarte].imSpiel == false) {
-        aktuelleKarte = Math.floor(Math.random() * 31);
-    }
-    handKarten[handKarten.length] = kartenDeck[aktuelleKarte];
-    kartenDeck[aktuelleKarte].imSpiel = false;
+function zieheKarten() {
+    let aktuelleKarte = Math.floor(Math.random() * (kartenDeck.length - 1));
+    handKarten.push(kartenDeck[aktuelleKarte]);
+    kartenDeck.splice(aktuelleKarte, 1);
 }
 /*Funktion Nachziehstapel*/
 function nachziehStapelErstellen() {
-    document.getElementById("nachziehStapel").innerHTML = `<div class="stylingKarten">
+    document.getElementById("nachziehStapel").innerHTML = `<div class="StylingKarten">
     <img src="img/kartenruecken.jpeg" class="rueckseite">
     </div>`;
 }
 /*Funktion zum generieren des Auflegestapels*/
 function auflegeStapelErstellen() {
-    let aktuelleKarte = Math.floor(Math.random() * 31); //Zufällige Zahl zwischen 0 und 31
-    while (kartenDeck[aktuelleKarte].imSpiel == false) //Falls die nte Karte nicht im Deck ist: versuche es nochmal
-     {
-        aktuelleKarte = Math.floor(Math.random() * 31);
-    }
-    obereKarte = kartenDeck[aktuelleKarte]; //Karte im Deck wird der Hand hinzugefügt.
-    kartenDeck[aktuelleKarte].imSpiel = false; //Karte ist nicht mehr im Deck dannach.
+    let aktuelleKarte = Math.floor(Math.random() * (kartenDeck.length - 1));
+    obereKarte = kartenDeck[aktuelleKarte];
+    kartenDeck.splice(aktuelleKarte, 1);
     let write = "";
-    write += `<div class="stylingKarten">`;
+    write += `<div class="StylingKarten">`;
     switch (obereKarte.symbol) {
         case "♥":
-            write += "<div class='rot' class='sytlingSymbol'>♥";
+            write += "<div class='rot' class='SytlingSymbol'>♥";
             break;
         case "♦":
-            write += "<div class='rot' class='stylingSymbol'>♦";
+            write += "<div class='rot' class='StylingSymbol'>♦";
             break;
         case "♣":
-            write += "<div class='schwarz' class='stylingSymbol'>♣";
+            write += "<div class='schwarz' class='StylingSymbol'>♣";
             break;
         case "♠":
-            write += "<div class='schwarz' class='stylingSymbol'>♠";
+            write += "<div class='schwarz' class='StylingSymbol'>♠";
             break;
+        default:
+            console.log("Error");
     }
     switch (obereKarte.wert) {
         case "Ass":
@@ -254,6 +217,8 @@ function auflegeStapelErstellen() {
         case "7":
             write += `7</div>`;
             break;
+        default:
+            console.log("Error");
     }
     write += `</div>`;
     document.getElementById("auflegeStapel").innerHTML = `${write}`;
@@ -263,20 +228,22 @@ function handKartenErstellen() {
     document.getElementById("handKartenSpieler").innerHTML = "";
     for (var i = 0; i < handKarten.length; i++) {
         let write = "";
-        write += `<div class="stylingKarten">`;
+        write += `<div class="StylingKarten">`;
         switch (handKarten[i].symbol) {
             case "♥":
-                write += "<div class='rot' class='stylingSymbol'>♥";
+                write += "<div class='rot' class='StylingSymbol'>♥";
                 break;
             case "♦":
-                write += "<div class='rot' class='stylingSymbol'>♦";
+                write += "<div class='rot' class='StylingSymbol'>♦";
                 break;
             case "♣":
-                write += "<div class='schwarz' class='stylingSymbol'>♣";
+                write += "<div class='schwarz' class='StylingSymbol'>♣";
                 break;
             case "♠":
-                write += "<div class='schwarz' class='stylingSymbol'>♠";
+                write += "<div class='schwarz' class='StylingSymbol'>♠";
                 break;
+            default:
+                console.log("Error");
         }
         switch (handKarten[i].wert) {
             case "Ass":
@@ -303,6 +270,8 @@ function handKartenErstellen() {
             case "7":
                 write += `7</div>`;
                 break;
+            default:
+                console.log("Error");
         }
         write += `</div>`;
         document.getElementById("handKartenSpieler").innerHTML += `${write}`;
