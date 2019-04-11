@@ -213,9 +213,10 @@ function spielStarten(): void {
 
 
 function zieheKarten(): void {
-    let aktuelleKarte: number = Math.floor(Math.random() * (kartenDeck.length - 1));
+    let aktuelleKarte: number = Math.floor(Math.random() * (kartenDeck.length));
     handKarten.push(kartenDeck[aktuelleKarte]);
-    kartenDeck.splice(aktuelleKarte, 1)
+    kartenDeck.splice(aktuelleKarte, 1) /*splice = 1. wie vielte Stelle im Array, 2. wie viele Elemente im Array werden entfernt, 3. was wird an dieser Stelle beigefügt
+                                                    -> Karte wird rausgeschmissen)*/
 }
 
 
@@ -229,7 +230,7 @@ function nachziehStapelErstellen(): void {
 /*Funktion zum generieren des Auflegestapels*/
 function auflegeStapelErstellen(): void {
 
-    let aktuelleKarte: number = Math.floor(Math.random() * (kartenDeck.length - 1));
+    let aktuelleKarte: number = Math.floor(Math.random() * (kartenDeck.length));
     obereKarte = kartenDeck[aktuelleKarte];
     kartenDeck.splice(aktuelleKarte, 1);
 
