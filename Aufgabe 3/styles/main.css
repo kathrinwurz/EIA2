@@ -1,0 +1,56 @@
+/* Aufgabe: Aufgabe 2 - Mau Mau
+   Name: Kathrin Wurz
+   Matrikel: 260742
+   Datum: 07.04.2019 
+   Der Code wurde in Zusammenarbeit mit Bastian Culig, Lisa Sanchez y Bittner, Carlotta Reinders, Daniel Mainberger und Marvin Kübler erstellt. */
+
+
+
+html {
+    background-color: #3d0617;
+    font-family: 'Abril Fatface', cursive;
+    color: #dec7b2;
+}
+
+
+h1 {
+    color: #3d0617;
+    background-color: #dec7b2;
+    text-align: center;
+    font-size: 4rem;
+    border: 0.5px solid #dec7b2 ;
+}
+
+
+.rueckseite{
+    width: 160px;
+    height: 224px;
+    margin: 0px;
+}
+
+
+.rot{
+    color: firebrick;
+}
+
+.schwarz{
+    color: black;
+}
+
+
+.StylingKarten{
+    border: #dec7b2 solid 1px;
+    width: 160px;
+    height: 224px;
+    margin: 25px;
+    font-weight: bold;
+    font-size: 4rem;
+    display: inline-block;
+    text-align: center;
+}
+
+
+
+
+
+
