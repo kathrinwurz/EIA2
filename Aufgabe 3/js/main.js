@@ -271,7 +271,7 @@ function handKartenErstellen() {
     for (let i = 0; i < handKarten.length; i++) {
         handKarten[i].position = "position" + i;
         let write = "";
-        write += `<div class="StylingKarten" id="position"${i}>`;
+        write += `<div class="StylingKarten" id="position${i}">`;
         switch (handKarten[i].symbol) {
             case 1:
                 write += `<div class='rot' class='StylingSymbol'>♥`;
@@ -323,7 +323,9 @@ function handKartenErstellen() {
 function karteAusspielen() {
     let idAusgewählteKarte = event.target;
     for (let i = 0; i < handKarten.length; i++) {
+        console.log("x");
         if (String(idAusgewählteKarte.getAttribute("id")) == handKarten[i].position) {
+            console.log("y");
             if (handKarten[i].symbol == obereKarte.symbol || handKarten[i].wert == obereKarte.wert) {
                 auflegeStapelDeck.push(obereKarte);
                 obereKarte = handKarten[i];

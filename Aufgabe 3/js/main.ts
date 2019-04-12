@@ -275,6 +275,8 @@ function nachziehStapelErstellen(): void {
 }
 
 
+
+
 /*Funktion zum generieren des Auflegestapels ---> Ablage*/
 function auflegeStapelErstellen(): void {
 
@@ -296,9 +298,7 @@ function auflegeStapelErstellen(): void {
             break;
         default:
             console.log("Error")
-
-    }
-
+        }
     switch (obereKarte.wert) {
         case 14:
             write += `A</div>`;
@@ -341,7 +341,7 @@ function handKartenErstellen(): void {
     for (let i: number = 0; i < handKarten.length; i++) {
         handKarten[i].position = "position" + i;
         let write: string = "";
-        write += `<div class="StylingKarten" id="position"${i}>`
+        write += `<div class="StylingKarten" id="position${i}">`
 
         switch (handKarten[i].symbol) {
             case 1:
@@ -394,11 +394,12 @@ function handKartenErstellen(): void {
 }
 
 
-
 function karteAusspielen(): void {
     let idAusgewählteKarte: HTMLElement = <HTMLElement>event.target;
     for (let i = 0; i < handKarten.length; i++) {
+        console.log("x");
         if (String(idAusgewählteKarte.getAttribute("id")) == handKarten[i].position) {
+            console.log("y");
             if (handKarten[i].symbol == obereKarte.symbol || handKarten[i].wert == obereKarte.wert) {
                 auflegeStapelDeck.push(obereKarte);
                 obereKarte = handKarten[i];
