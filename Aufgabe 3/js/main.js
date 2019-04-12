@@ -170,11 +170,10 @@ let pikSieben = {
     wert: 7,
     position: "nichts"
 };
-/*Arrays Kartendeck + Handkarten*/
-/**nachziehstapel = deck */
-let kartenDeck = [herzAss, karoAss, kreuzAss, pikAss, herzKoenig, karoKoenig, kreuzKoenig, pikKoenig, herzDame, karoDame, kreuzDame, pikDame, herzBube, karoBube, kreuzBube, pikBube, herzZehn, karoZehn, kreuzZehn, pikZehn, herzNeun, karoNeun, kreuzNeun, pikNeun, herzAcht, karoAcht, kreuzAcht, pikAcht, herzSieben, karoSieben, kreuzSieben, pikSieben];
-let handKarten = [];
-let auflegeStapelDeck = [];
+/*Arrays Nachziehstapel + Handkarten + Auflegestapel*/
+let nachziehStapelArray = [herzAss, karoAss, kreuzAss, pikAss, herzKoenig, karoKoenig, kreuzKoenig, pikKoenig, herzDame, karoDame, kreuzDame, pikDame, herzBube, karoBube, kreuzBube, pikBube, herzZehn, karoZehn, kreuzZehn, pikZehn, herzNeun, karoNeun, kreuzNeun, pikNeun, herzAcht, karoAcht, kreuzAcht, pikAcht, herzSieben, karoSieben, kreuzSieben, pikSieben];
+let handKartenArray = [];
+let auflegeStapelArray = [];
 let obereKarte;
 /*Fenster öffnen, Abfrage für Anzahl der Handkarten*/
 function spielStarten() {
@@ -187,18 +186,18 @@ function spielStarten() {
         zieheKarten();
     }
     nachziehStapelErstellen();
-    let aktuelleKarte = Math.floor(Math.random() * (kartenDeck.length));
-    obereKarte = kartenDeck[aktuelleKarte];
-    kartenDeck.splice(aktuelleKarte, 1);
+    let aktuelleKarte = Math.floor(Math.random() * (nachziehStapelArray.length));
+    obereKarte = nachziehStapelArray[aktuelleKarte];
+    nachziehStapelArray.splice(aktuelleKarte, 1);
     auflegeStapelErstellen();
     document.getElementById("sortieren").addEventListener("click", kartenSortieren);
     handKartenErstellen();
 }
 function zieheKarten() {
-    if (kartenDeck.length > 0) {
-        let aktuelleKarte = Math.floor(Math.random() * (kartenDeck.length));
-        handKarten.push(kartenDeck[aktuelleKarte]);
-        kartenDeck.splice(aktuelleKarte, 1); /*splice = 1. wie vielte Stelle im Array, 2. wie viele Elemente im Array werden entfernt, 3. was wird an dieser Stelle beigefügt
+    if (nachziehStapelArray.length > 0) {
+        let aktuelleKarte = Math.floor(Math.random() * (nachziehStapelArray.length));
+        handKartenArray.push(nachziehStapelArray[aktuelleKarte]);
+        nachziehStapelArray.splice(aktuelleKarte, 1); /*splice = 1. wie vielte Stelle im Array, 2. wie viele Elemente im Array werden entfernt, 3. was wird an dieser Stelle beigefügt
                                                     -> Karte wird rausgeschmissen)*/
         handKartenErstellen();
     }
@@ -268,11 +267,11 @@ function auflegeStapelErstellen() {
 function handKartenErstellen() {
     document.getElementById("handKartenSpieler").addEventListener("click", karteAusspielen);
     document.getElementById("handKartenSpieler").innerHTML = "";
-    for (let i = 0; i < handKarten.length; i++) {
-        handKarten[i].position = "position" + i;
+    for (let i = 0; i < handKartenArray.length; i++) {
+        handKartenArray[i].position = "position" + i;
         let write = "";
         write += `<div class="StylingKarten" id="position${i}">`;
-        switch (handKarten[i].symbol) {
+        switch (handKartenArray[i].symbol) {
             case 1:
                 write += `<div class='rot' class='StylingSymbol'>♥`;
                 break;
@@ -288,7 +287,7 @@ function handKartenErstellen() {
             default:
                 console.log("Error");
         }
-        switch (handKarten[i].wert) {
+        switch (handKartenArray[i].wert) {
             case 14:
                 write += `A</div>`;
                 break;
@@ -320,17 +319,18 @@ function handKartenErstellen() {
         document.getElementById("handKartenSpieler").innerHTML += `${write}`;
     }
 }
+/*Funktion für das Ausspielen einer Karte */
 function karteAusspielen() {
     let idAusgewählteKarte = event.target;
-    for (let i = 0; i < handKarten.length; i++) {
+    for (let i = 0; i < handKartenArray.length; i++) {
         console.log("x");
-        if (String(idAusgewählteKarte.getAttribute("id")) == handKarten[i].position) {
+        if (String(idAusgewählteKarte.getAttribute("id")) == handKartenArray[i].position) {
             console.log("y");
-            if (handKarten[i].symbol == obereKarte.symbol || handKarten[i].wert == obereKarte.wert) {
-                auflegeStapelDeck.push(obereKarte);
-                obereKarte = handKarten[i];
-                handKarten[i].position = "nichts";
-                handKarten.splice(i, 1);
+            if (handKartenArray[i].symbol == obereKarte.symbol || handKartenArray[i].wert == obereKarte.wert) {
+                auflegeStapelArray.push(obereKarte);
+                obereKarte = handKartenArray[i];
+                handKartenArray[i].position = "nichts";
+                handKartenArray.splice(i, 1);
                 handKartenErstellen();
                 auflegeStapelErstellen();
                 console.log("erledigt");
@@ -341,11 +341,13 @@ function karteAusspielen() {
         }
     }
 }
+/*Funktion für das Sortieren der Karten */
 function kartenSortieren() {
-    handKarten.sort(nachWertSortieren); //nimmt 2 Werte aus dem Array und vergleicht sie 
-    handKarten.sort(nachSymbolSortieren);
+    handKartenArray.sort(nachWertSortieren); //nimmt 2 Werte aus dem Array und vergleicht sie 
+    handKartenArray.sort(nachSymbolSortieren);
     handKartenErstellen();
 }
+/*Nach Wert sortieren*/
 function nachWertSortieren(karte1, karte2) {
     let wertKarte1 = karte1.wert;
     let wertKarte2 = karte2.wert;
@@ -356,6 +358,7 @@ function nachWertSortieren(karte1, karte2) {
     if (wertKarte1 == wertKarte2)
         return 0; //sort-Funktion macht nichts
 }
+/*Nach Symbol sortieren*/
 function nachSymbolSortieren(karte1, karte2) {
     let symbolKarte1 = karte1.symbol;
     let symbolKarte2 = karte2.symbol;
