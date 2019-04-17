@@ -6,169 +6,169 @@
 let herzAss = {
     symbol: 1,
     wert: 14,
-    position: "nichts"
+    position: ""
 };
 let karoAss = {
     symbol: 2,
     wert: 14,
-    position: "nichts"
+    position: ""
 };
 let kreuzAss = {
     symbol: 3,
     wert: 14,
-    position: "nichts"
+    position: ""
 };
 let pikAss = {
     symbol: 4,
     wert: 14,
-    position: "nichts"
+    position: ""
 };
 /*König*/
 let herzKoenig = {
     symbol: 1,
     wert: 13,
-    position: "nichts"
+    position: ""
 };
 let karoKoenig = {
     symbol: 2,
     wert: 13,
-    position: "nichts"
+    position: ""
 };
 let kreuzKoenig = {
     symbol: 3,
     wert: 13,
-    position: "nichts"
+    position: ""
 };
 let pikKoenig = {
     symbol: 4,
     wert: 13,
-    position: "nichts"
+    position: ""
 };
 /*Dame*/
 let herzDame = {
     symbol: 1,
     wert: 12,
-    position: "nichts"
+    position: ""
 };
 let karoDame = {
     symbol: 2,
     wert: 12,
-    position: "nichts"
+    position: ""
 };
 let kreuzDame = {
     symbol: 3,
     wert: 12,
-    position: "nichts"
+    position: ""
 };
 let pikDame = {
     symbol: 4,
     wert: 12,
-    position: "nichts"
+    position: ""
 };
 /*Bube*/
 let herzBube = {
     symbol: 1,
     wert: 11,
-    position: "nichts"
+    position: ""
 };
 let karoBube = {
     symbol: 2,
     wert: 11,
-    position: "nichts"
+    position: ""
 };
 let kreuzBube = {
     symbol: 3,
     wert: 11,
-    position: "nichts"
+    position: ""
 };
 let pikBube = {
     symbol: 4,
     wert: 11,
-    position: "nichts"
+    position: ""
 };
 /*10*/
 let herzZehn = {
     symbol: 1,
     wert: 10,
-    position: "nichts"
+    position: ""
 };
 let karoZehn = {
     symbol: 2,
     wert: 10,
-    position: "nichts"
+    position: ""
 };
 let kreuzZehn = {
     symbol: 3,
     wert: 10,
-    position: "nichts"
+    position: ""
 };
 let pikZehn = {
     symbol: 4,
     wert: 10,
-    position: "nichts"
+    position: ""
 };
 /*9*/
 let herzNeun = {
     symbol: 1,
     wert: 9,
-    position: "nichts"
+    position: ""
 };
 let karoNeun = {
     symbol: 2,
     wert: 9,
-    position: "nichts"
+    position: ""
 };
 let kreuzNeun = {
     symbol: 3,
     wert: 9,
-    position: "nichts"
+    position: ""
 };
 let pikNeun = {
     symbol: 4,
     wert: 9,
-    position: "nichts"
+    position: ""
 };
 /*8*/
 let herzAcht = {
     symbol: 1,
     wert: 8,
-    position: "nichts"
+    position: ""
 };
 let karoAcht = {
     symbol: 2,
     wert: 8,
-    position: "nichts"
+    position: ""
 };
 let kreuzAcht = {
     symbol: 3,
     wert: 8,
-    position: "nichts"
+    position: ""
 };
 let pikAcht = {
     symbol: 4,
     wert: 8,
-    position: "nichts"
+    position: ""
 };
 /*7*/
 let herzSieben = {
     symbol: 1,
     wert: 7,
-    position: "nichts"
+    position: ""
 };
 let karoSieben = {
     symbol: 2,
     wert: 7,
-    position: "nichts"
+    position: ""
 };
 let kreuzSieben = {
     symbol: 3,
     wert: 7,
-    position: "nichts"
+    position: ""
 };
 let pikSieben = {
     symbol: 4,
     wert: 7,
-    position: "nichts"
+    position: ""
 };
 /*Arrays Nachziehstapel + Handkarten + Auflegestapel*/
 let nachziehStapelArray = [herzAss, karoAss, kreuzAss, pikAss, herzKoenig, karoKoenig, kreuzKoenig, pikKoenig, herzDame, karoDame, kreuzDame, pikDame, herzBube, karoBube, kreuzBube, pikBube, herzZehn, karoZehn, kreuzZehn, pikZehn, herzNeun, karoNeun, kreuzNeun, pikNeun, herzAcht, karoAcht, kreuzAcht, pikAcht, herzSieben, karoSieben, kreuzSieben, pikSieben];
@@ -319,6 +319,7 @@ function handKartenErstellen() {
         document.getElementById("handKartenSpieler").innerHTML += `${write}`;
     }
 }
+/*Aufgabe 3*/
 /*Funktion für das Ausspielen einer Karte */
 function karteAusspielen() {
     let idAusgewählteKarte = event.target;
@@ -329,7 +330,7 @@ function karteAusspielen() {
             if (handKartenArray[i].symbol == obereKarte.symbol || handKartenArray[i].wert == obereKarte.wert) {
                 auflegeStapelArray.push(obereKarte);
                 obereKarte = handKartenArray[i];
-                handKartenArray[i].position = "nichts";
+                handKartenArray[i].position = "";
                 handKartenArray.splice(i, 1);
                 handKartenErstellen();
                 auflegeStapelErstellen();

@@ -27,6 +27,12 @@ h1 {
     margin: 0px;
 }
 
+#nachziehStapel {
+    width: 160px;
+    height: 224px;
+    margin-bottom: 50px;
+}
+
 
 .rot{
     color: firebrick;
@@ -46,6 +52,14 @@ h1 {
     font-size: 4rem;
     display: inline-block;
     text-align: center;
+    cursor: pointer;
+}
+
+
+.StylingKarten * {
+    pointer-events: none;
+    
+
 }
 
 

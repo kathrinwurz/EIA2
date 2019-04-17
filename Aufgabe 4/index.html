@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aufgabe 4: Eisdealer</title>
+
+    <!-- Aufgabe: Aufgabe 4: Eisdealer
+    Name: Kathrin Wurz
+    Matrikel: 260742
+    Datum: .04.2019 -->
+
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Londrina+Outline" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pompiere" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+
+<body>
+    <header>
+        <h1>Eisdealer</h1>
+    </header>
+
+    <main>
+        <fieldset id="eissorte">
+                <legend> Eissorte </legend>
+                <input type="checkbox" name="Eissorte1" value="check1" id="vanille"/>
+                <label for="vanille">Vanille</label>
+                <br>
+                <input type="checkbox" name="Eissorte2" value="check2" id="schokolade"/>
+                <label for="schokolade">Schokolade</label>
+                <br>
+                <input type="checkbox" name="Eissorte3" value="check3" id="erdbeere"/>
+                <label for="erdbeere">Erdbeere</label>
+                <br>
+                <input type="checkbox" name="Eissorte4" value="check3" id="haselnuss"/>
+                <label for="haselnuss">Haselnuss</label>
+                <br>
+                <input type="checkbox" name="Eissorte5" value="check3" id="straciatella"/>
+                <label for="straciatella">Straciatella</label>
+        </fieldset>
+
+
+        <fieldset id="toppings">
+                <legend> Toppings </legend>
+                <input type="checkbox" name="Topping1" value="check1" id="sahne"/>
+                <label for="sahne">Sahne</label>
+                <br>
+                <input type="checkbox" name="Topping2" value="check2" id="streusel"/>
+                <label for="streusel">Streusel</label>
+                <br>
+                <input type="checkbox" name="Topping3" value="check3" id="schokososse"/>
+                <label for="schokososse">Schokosoße</label>
+                <br>
+                <input type="checkbox" name="Topping4" value="check3" id="krokant"/>
+                <label for="krokat">Krokant</label>
+        </fieldset>
+
+        <fieldset id="behaeltnis">
+                <legend> Behältnis </legend>
+                <input type="radio" name="Behältnis1" value="radio1" id="waffel" />
+                <label for="waffel">Waffel</label>
+                <br>
+                <input type="radio" name="Behältnis2" value="radio2" id="becher"/>
+                <label for="becher">Becher</label>
+        </fieldset>
+
+        <fieldset id="lieferung">
+                <legend> Lieferoptionen </legend>
+                <input type="radio" name="Lieferoption1" value="radio1" id="abholen" />
+                <label for="abholen">Abholung</label>
+                <br>
+                <input type="radio" name="Lieferoption2" value="radio2" id="nachHause"/>
+                <label for="nachHause">Lieferung nach Hause (bitte Adresse angeben)</label>
+        </fieldset>
+
+        <fieldset id="adresse">
+                <legend> Adresse </legend>
+                <input type="text" name="Text" placeholder="Straße"/>
+                <br>
+                <input type="text" name="Text" placeholder="Hausnummer"/>
+                <br>
+                <input type="text" name="Text" placeholder="Postleitzahl"/>
+                <br>
+                <input type="text" name="Text" placeholder="Ort"/>
+
+        </fieldset>
+
+        <fieldset id="zusammenfassung">
+            <legend>Zusammenfassung der Bestellung</legend>
+
+        </fieldset>
+
+        <fieldset id="button">
+                <button name="Button" type="submit">Bestellung prüfen</button>
+        </fieldset>
+
+
+
+
+
+    </main>
+
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

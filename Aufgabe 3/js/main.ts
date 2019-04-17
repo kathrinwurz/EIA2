@@ -17,200 +17,200 @@ interface Karten {
 let herzAss: Karten = {
     symbol: 1,
     wert: 14,
-    position: "nichts"
+    position: ""
 }
 
 let karoAss: Karten = {
     symbol: 2,
     wert: 14,
-    position: "nichts"
+    position: ""
 }
 
 let kreuzAss: Karten = {
     symbol: 3,
     wert: 14,
-    position: "nichts"
+    position: ""
 }
 
 let pikAss: Karten = {
     symbol: 4,
     wert: 14,
-    position: "nichts"
+    position: ""
 }
 
 /*König*/
 let herzKoenig: Karten = {
     symbol: 1,
     wert: 13,
-    position: "nichts"
+    position: ""
 }
 
 let karoKoenig: Karten = {
     symbol: 2,
     wert: 13,
-    position: "nichts"
+    position: ""
 }
 
 let kreuzKoenig: Karten = {
     symbol: 3,
     wert: 13,
-    position: "nichts"
+    position: ""
 }
 
 let pikKoenig: Karten = {
     symbol: 4,
     wert: 13,
-    position: "nichts"
+    position: ""
 }
 
 /*Dame*/
 let herzDame: Karten = {
     symbol: 1,
     wert: 12,
-    position: "nichts"
+    position: ""
 }
 
 let karoDame: Karten = {
     symbol: 2,
     wert: 12,
-    position: "nichts"
+    position: ""
 }
 
 let kreuzDame: Karten = {
     symbol: 3,
     wert: 12,
-    position: "nichts"
+    position: ""
 }
 
 let pikDame: Karten = {
     symbol: 4,
     wert: 12,
-    position: "nichts"
+    position: ""
 }
 
 /*Bube*/
 let herzBube: Karten = {
     symbol: 1,
     wert: 11,
-    position: "nichts"
+    position: ""
 }
 
 let karoBube: Karten = {
     symbol: 2,
     wert: 11,
-    position: "nichts"
+    position: ""
 }
 
 let kreuzBube: Karten = {
     symbol: 3,
     wert: 11,
-    position: "nichts"
+    position: ""
 }
 
 let pikBube: Karten = {
     symbol: 4,
     wert: 11,
-    position: "nichts"
+    position: ""
 }
 
 /*10*/
 let herzZehn: Karten = {
     symbol: 1,
     wert: 10,
-    position: "nichts"
+    position: ""
 }
 
 let karoZehn: Karten = {
     symbol: 2,
     wert: 10,
-    position: "nichts"
+    position: ""
 }
 
 let kreuzZehn: Karten = {
     symbol: 3,
     wert: 10,
-    position: "nichts"
+    position: ""
 }
 
 let pikZehn: Karten = {
     symbol: 4,
     wert: 10,
-    position: "nichts"
+    position: ""
 }
 
 /*9*/
 let herzNeun: Karten = {
     symbol: 1,
     wert: 9,
-    position: "nichts"
+    position: ""
 }
 
 let karoNeun: Karten = {
     symbol: 2,
     wert: 9,
-    position: "nichts"
+    position: ""
 }
 
 let kreuzNeun: Karten = {
     symbol: 3,
     wert: 9,
-    position: "nichts"
+    position: ""
 }
 
 let pikNeun: Karten = {
     symbol: 4,
     wert: 9,
-    position: "nichts"
+    position: ""
 }
 
 /*8*/
 let herzAcht: Karten = {
     symbol: 1,
     wert: 8,
-    position: "nichts"
+    position: ""
 }
 
 let karoAcht: Karten = {
     symbol: 2,
     wert: 8,
-    position: "nichts"
+    position: ""
 }
 
 let kreuzAcht: Karten = {
     symbol: 3,
     wert: 8,
-    position: "nichts"
+    position: ""
 }
 
 let pikAcht: Karten = {
     symbol: 4,
     wert: 8,
-    position: "nichts"
+    position: ""
 }
 
 /*7*/
 let herzSieben: Karten = {
     symbol: 1,
     wert: 7,
-    position: "nichts"
+    position: ""
 }
 
 let karoSieben: Karten = {
     symbol: 2,
     wert: 7,
-    position: "nichts"
+    position: ""
 }
 
 let kreuzSieben: Karten = {
     symbol: 3,
     wert: 7,
-    position: "nichts"
+    position: ""
 }
 
 let pikSieben: Karten = {
     symbol: 4,
     wert: 7,
-    position: "nichts"
+    position: ""
 }
 
 
@@ -392,6 +392,7 @@ function handKartenErstellen(): void {
     }
 }
 
+/*Aufgabe 3*/
 /*Funktion für das Ausspielen einer Karte */
 function karteAusspielen(): void {
     let idAusgewählteKarte: HTMLElement = <HTMLElement>event.target;
@@ -402,7 +403,7 @@ function karteAusspielen(): void {
             if (handKartenArray[i].symbol == obereKarte.symbol || handKartenArray[i].wert == obereKarte.wert) {
                 auflegeStapelArray.push(obereKarte);
                 obereKarte = handKartenArray[i];
-                handKartenArray[i].position = "nichts";
+                handKartenArray[i].position = "";
                 handKartenArray.splice(i, 1);
                 handKartenErstellen();
                 auflegeStapelErstellen();
