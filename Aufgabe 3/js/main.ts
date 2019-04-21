@@ -397,17 +397,14 @@ function handKartenErstellen(): void {
 function karteAusspielen(): void {
     let idAusgewählteKarte: HTMLElement = <HTMLElement>event.target;
     for (let i = 0; i < handKartenArray.length; i++) {
-        console.log("x");
         if (String(idAusgewählteKarte.getAttribute("id")) == handKartenArray[i].position) {
-            console.log("y");
             if (handKartenArray[i].symbol == obereKarte.symbol || handKartenArray[i].wert == obereKarte.wert) {
                 auflegeStapelArray.push(obereKarte);
                 obereKarte = handKartenArray[i];
                 handKartenArray[i].position = "";
                 handKartenArray.splice(i, 1);
                 handKartenErstellen();
-                auflegeStapelErstellen();
-                console.log("erledigt");
+                auflegeStapelErstellen();       
             }
             else {
                 alert("Diese Karte kann nicht ausgespielt werden.")
@@ -415,6 +412,8 @@ function karteAusspielen(): void {
         }
     }
 }
+
+
 
 /*Funktion für das Sortieren der Karten */
 function kartenSortieren() {
@@ -446,8 +445,6 @@ function nachSymbolSortieren(karte1: Karten, karte2: Karten): number {
 function leertaste(event: KeyboardEvent): void {
     if (event.keyCode == 32) zieheKarten();
 }
-
-
 
 
 

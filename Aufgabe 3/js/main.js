@@ -324,9 +324,7 @@ function handKartenErstellen() {
 function karteAusspielen() {
     let idAusgewählteKarte = event.target;
     for (let i = 0; i < handKartenArray.length; i++) {
-        console.log("x");
         if (String(idAusgewählteKarte.getAttribute("id")) == handKartenArray[i].position) {
-            console.log("y");
             if (handKartenArray[i].symbol == obereKarte.symbol || handKartenArray[i].wert == obereKarte.wert) {
                 auflegeStapelArray.push(obereKarte);
                 obereKarte = handKartenArray[i];
@@ -334,7 +332,6 @@ function karteAusspielen() {
                 handKartenArray.splice(i, 1);
                 handKartenErstellen();
                 auflegeStapelErstellen();
-                console.log("erledigt");
             }
             else {
                 alert("Diese Karte kann nicht ausgespielt werden.");

@@ -2,108 +2,121 @@
 <html lang="de">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Aufgabe 4: Eisdealer</title>
+        <meta charset="UTF-8">
+        <title>Aufgabe 4: Eisdealer</title>
 
-    <!-- Aufgabe: Aufgabe 4: Eisdealer
-    Name: Kathrin Wurz
-    Matrikel: 260742
-    Datum: .04.2019 -->
+        <!-- Aufgabe: Aufgabe 4: Eisdealer
+     Name: Kathrin Wurz
+     Matrikel: 260742
+     Datum: 21.04.2019 
+     Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. 
+     Er wurde nicht kopiert und auch nicht diktiert.-->
 
-    <link rel="stylesheet" type="text/css" href="styles/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Londrina+Outline" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Pompiere" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" type="text/css" href="styles/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Londrina+Outline" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Pompiere" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 
 <body>
-    <header>
-        <h1>Eisdealer</h1>
-    </header>
+        <header>
+                <h1>Eisdealer 🍨</h1>
+        </header>
 
-    <main>
-        <fieldset id="eissorte">
-                <legend> Eissorte </legend>
-                <input type="checkbox" name="Eissorte1" value="check1" id="vanille"/>
-                <label for="vanille">Vanille</label>
-                <br>
-                <input type="checkbox" name="Eissorte2" value="check2" id="schokolade"/>
-                <label for="schokolade">Schokolade</label>
-                <br>
-                <input type="checkbox" name="Eissorte3" value="check3" id="erdbeere"/>
-                <label for="erdbeere">Erdbeere</label>
-                <br>
-                <input type="checkbox" name="Eissorte4" value="check3" id="haselnuss"/>
-                <label for="haselnuss">Haselnuss</label>
-                <br>
-                <input type="checkbox" name="Eissorte5" value="check3" id="straciatella"/>
-                <label for="straciatella">Straciatella</label>
-        </fieldset>
+        <main>
+                <fieldset id="eissorte">
+                        <legend>Kugel je 1,00€ </legend>
 
+                        <input type="checkbox" name="Vanille" value="1.0" id="Vanille" />
+                        <label for="Vanille">Vanille</label>
+                        <br>
+                        <input type="checkbox" name="Schokolade" value="1.0" id="Schokolade" />
+                        <label for="Schokolade">Schokolade</label>
+                        <br>
+                        <input type="checkbox" name="Himbeere" value="1.0" id="Himbeere" />
+                        <label for="Himbeere">Himbeere</label>
+                        <br>
+                        <input type="checkbox" name="Straciatella" value="1.0" id="Straciatella" />
+                        <label for="Straciatella">Straciatella</label>
+                        <br>
+                        <input type="checkbox" name="Mango" value="1.0" id="Mango" />
+                        <label for="Mango">Mango</label>
+                        <br>
+                        <input type="checkbox" name="Haselnuss" value="1.0" id="Haselnuss" />
+                        <label for="Haselnuss">Haselnuss</label>
+                        <br>
+                        <input type="checkbox" name="Kokos" value="1.0" id="Kokos" />
+                        <label for="Kokos">Kokos</label>
+                </fieldset>
 
-        <fieldset id="toppings">
-                <legend> Toppings </legend>
-                <input type="checkbox" name="Topping1" value="check1" id="sahne"/>
-                <label for="sahne">Sahne</label>
-                <br>
-                <input type="checkbox" name="Topping2" value="check2" id="streusel"/>
-                <label for="streusel">Streusel</label>
-                <br>
-                <input type="checkbox" name="Topping3" value="check3" id="schokososse"/>
-                <label for="schokososse">Schokosoße</label>
-                <br>
-                <input type="checkbox" name="Topping4" value="check3" id="krokant"/>
-                <label for="krokat">Krokant</label>
-        </fieldset>
+                <fieldset id="eistoppings">
+                        <legend> Toppings je 0,30€</legend>
+                        <input type="checkbox" name="Topping1" value="0.3" id="Sahne" />
+                        <label for="sahne">Sahne</label>
+                        <br>
+                        <input type="checkbox" name="Topping2" value="0.3" id="Streusel" />
+                        <label for="streusel">Streusel</label>
+                        <br>
+                        <input type="checkbox" name="Topping3" value="0.3" id="Schokosoße" />
+                        <label for="Schokosoße">Schokosoße</label>
+                        <br>
+                        <input type="checkbox" name="Topping4" value="0.3" id="Krokant" />
+                        <label for="Krokant">Krokant</label>
+                </fieldset>
 
-        <fieldset id="behaeltnis">
-                <legend> Behältnis </legend>
-                <input type="radio" name="Behältnis1" value="radio1" id="waffel" />
-                <label for="waffel">Waffel</label>
-                <br>
-                <input type="radio" name="Behältnis2" value="radio2" id="becher"/>
-                <label for="becher">Becher</label>
-        </fieldset>
+                <fieldset id="behaeltnis">
+                        <legend> Behältnis </legend>
+                        <input type="radio" name="Behältnis" value="0" id="Waffel" />
+                        <label for="Waffel">Waffel</label>
+                        <br>
+                        <input type="radio" name="Behältnis" value="0" id="Becher" />
+                        <label for="Becher">Becher</label>
+                </fieldset>
 
-        <fieldset id="lieferung">
-                <legend> Lieferoptionen </legend>
-                <input type="radio" name="Lieferoption1" value="radio1" id="abholen" />
-                <label for="abholen">Abholung</label>
-                <br>
-                <input type="radio" name="Lieferoption2" value="radio2" id="nachHause"/>
-                <label for="nachHause">Lieferung nach Hause (bitte Adresse angeben)</label>
-        </fieldset>
+                <fieldset id="lieferung">
+                        <legend> Lieferoptionen </legend>
+                        <input type="radio" name="Lieferoption" value="0" id="Abholung" />
+                        <label for="Abholung">Abholung</label>
+                        <br>
+                        <input type="radio" name="Lieferoption" value="3" id="Lieferung nach Hause" />
+                        <label for="Lieferung nach Hause">Lieferung nach Hause + 3,00€ (bitte Adresse angeben)</label>
+                </fieldset>
 
-        <fieldset id="adresse">
-                <legend> Adresse </legend>
-                <input type="text" name="Text" placeholder="Straße"/>
-                <br>
-                <input type="text" name="Text" placeholder="Hausnummer"/>
-                <br>
-                <input type="text" name="Text" placeholder="Postleitzahl"/>
-                <br>
-                <input type="text" name="Text" placeholder="Ort"/>
+                <fieldset id="adresse">
 
-        </fieldset>
-
-        <fieldset id="zusammenfassung">
-            <legend>Zusammenfassung der Bestellung</legend>
-
-        </fieldset>
-
-        <fieldset id="button">
-                <button name="Button" type="submit">Bestellung prüfen</button>
-        </fieldset>
-
-
-
+                        <legend> Adresse </legend>
+                        <input type="text" name="Name" placeholder="Name" id="Name" />
+                        <br>
+                        <input type="text" name=" Vorname" placeholder="Vorname" />
+                        <br>
+                        <input type="text" name=" Straße" placeholder="Straße" id="Straße" />
+                        <br>
+                        <input type="text" name=" Hausnummer" placeholder="Hausnummer" id="Hausnummer" />
+                        <br>
+                        <input type="text" name=" PLZ" pattern="[0-9]{5}" placeholder="Postleitzahl" id="PLZ" />
+                        <br>
+                        <input type="text" name=" Ort" placeholder="Ort" id="Ort" />
+                </fieldset>
 
 
-    </main>
+                <fieldset id="bestellUebersicht">
+                        <legend>Bestellübersicht</legend>
+                        <div id="uebersicht"> </div>
+                        <div id="preis"> </div>
+                </fieldset>
+
+                <button id="button">Bestellung prüfen</button>
 
 
-    <script src="js/main.js"></script>
+
+
+
+
+        </main>
+
+        <script src="js/main.js"></script>
 </body>
 
 </html>
