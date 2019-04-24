@@ -4,35 +4,49 @@
            Datum: 21.04.2019
            Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
            Er wurde nicht kopiert und auch nicht diktiert.--> */
-var aufgabe4;
-(function (aufgabe4) {
+var a4;
+(function (a4) {
     window.addEventListener("load", init);
     function init(_event) {
-        document.getElementById("button").addEventListener("click", bestellungPruefen);
+        document.getElementById("button").addEventListener("click", bestellungUeberpruefen);
         let fieldsets = document.getElementsByTagName("fieldset");
         for (let i = 0; i < fieldsets.length; i++) {
             let fieldset = fieldsets[i];
-            fieldset.addEventListener("change", bestellZusammenfassung);
+            {
+                fieldset.addEventListener("change", bestellUebersicht);
+            }
         }
     }
-    /*Funktion Auflistung der Bestellung + Bestellsumme */
-    function bestellZusammenfassung(_event) {
+    /*FUNKTION listet angewähltes auf und rechnet die Summe zusammen */
+    function bestellUebersicht(_event) {
         let startSumme = 0;
+        let summe = 0;
+        let preis = 0;
         let bestellEingabe = document.getElementsByTagName("input");
         document.getElementById("uebersicht").innerHTML = "";
         for (let i = 0; i < bestellEingabe.length; i++) {
+            if ((bestellEingabe[i].name == "Schokolade" && Number(bestellEingabe[i].value) > 0) || bestellEingabe[i].name == "Vanille" && Number(bestellEingabe[i].value) > 0 || (bestellEingabe[i].name == "Himbeere" && Number(bestellEingabe[i].value) > 0) || bestellEingabe[i].name == "Stracciatella" && Number(bestellEingabe[i].value) > 0 || bestellEingabe[i].name == "Mango" && Number(bestellEingabe[i].value) > 0) {
+                preis = Number(bestellEingabe[i].value);
+                summe += preis;
+                console.log(summe);
+                let ziel = document.createElement("li");
+                ziel.innerHTML = `${bestellEingabe[i].value} Kugel ${bestellEingabe[i].name}, `;
+                document.getElementById("uebersicht").appendChild(ziel);
+            }
             if (bestellEingabe[i].checked == true) {
                 let gesamtPreis = Number(bestellEingabe[i].value);
-                startSumme += gesamtPreis;
+                summe += gesamtPreis;
+                console.log(summe);
                 document.getElementById("preis").innerHTML = startSumme.toFixed(2).toString() + " " + "€";
                 let bestellUebersicht = document.createElement("li");
                 bestellUebersicht.innerHTML = `${bestellEingabe[i].id}`;
                 document.getElementById("uebersicht").appendChild(bestellUebersicht);
             }
+            // Nimmt Werte der Dropdown Boxen und zählt diese in die Übersicht
+            document.getElementById("preis").innerHTML = `Gesamtpreis:   ${summe} €`;
         }
     }
-    /*Funktion zum Prüfen fehlender Eingaben */
-    function bestellungPruefen(_event) {
+    function bestellungUeberpruefen(_event) {
         let kundenDaten = [];
         let kundenEingabe = document.getElementsByTagName("input");
         for (let i = 0; i < kundenEingabe.length; i++) {
@@ -42,11 +56,11 @@ var aufgabe4;
             }
         }
         if (kundenDaten.length == 0) {
-            alert("Danke für deine Bestellung!");
+            alert("Vielen Dank für deine Bestellung");
         }
         else {
-            alert(`${kundenDaten} fehlt. Bitte fülle die fehlenden Fehler aus.`);
+            alert(`${kundenDaten} fehlt. Bitte noch ergänzen!`);
         }
     }
-})(aufgabe4 || (aufgabe4 = {}));
+})(a4 || (a4 = {}));
 //# sourceMappingURL=main.js.map
