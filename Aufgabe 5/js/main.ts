@@ -117,25 +117,46 @@ namespace aufgabe5 {
     }
 
 
+/*Funktion zum Überprüfen der Bestellung*/ 
 
-    /*Funktion zum Überprüfen der Kundendaten */
-    function bestellungPruefen(_event: Event): void {
-        let kundenDaten: string[] = [];
-        let kundenEingabe: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
-        for (let i: number = 0; i < kundenEingabe.length; i++) {
-            if (kundenEingabe[i].value == "") {
-                let benoetigteDaten: string = kundenEingabe[i].name;
-                kundenDaten.push(benoetigteDaten);
-
+function bestellungPruefen(_event: Event): void {
+    let kundenDaten: string[] = [];
+    let kundenEingabe: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
+    let lieferungFehlt: number = 0;
+    let eisToppingFehlt: number = 0;
+    let behaelterFehlt: number = 0;
+    for (let i: number = 0; i < kundenEingabe.length; i++) {  
+        if (kundenEingabe[i].value == "") {
+            let benoetigteDaten: string = kundenEingabe[i].name;
+            kundenDaten.push(benoetigteDaten);
+        }
+        if (kundenEingabe[i].type == "checkbox" && kundenEingabe[i].checked == true) {
+                lieferungFehlt = 1;
             }
+            
+        if (kundenEingabe[i].type == "number" && Number(kundenEingabe[i].value) > 0) {
+                eisToppingFehlt = 1;
         }
+        if (kundenEingabe[i].type == "radio" && kundenEingabe[i].checked == true) {
+                behaelterFehlt = 1;
+        }
+    } 
 
-        if (kundenDaten.length == 0) {
-            alert("Danke für deine Bestellung! 👍🏻");
-        }
-        else {
-            alert(`${kundenDaten} fehlt. Bitte noch ausfüllen.👇🏻`);
-        }
 
+    if (lieferungFehlt == 0) {
+        alert("Bitte noch eine Lieferoption wählen.👇🏻")
     }
+    if (eisToppingFehlt == 0) {
+        alert("Bitte noch ein Eis/Topping wählen.👇🏻")
+    }
+    if (behaelterFehlt == 0) {
+        alert("Bitte noch einen Behälter wählen.👇🏻")
+    }
+    if (kundenDaten.length == 0) {
+        alert("Danke für deine Bestellung! 👍🏻");
+    }
+    else {
+        alert(`${kundenDaten} fehlt. Bitte noch ausfüllen.👇🏻`);
+    }
+}
 }
