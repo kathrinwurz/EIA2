@@ -1,0 +1,107 @@
+/* Aufgabe: Aufgabe 5: Eisdealer re-loaded
+    Name: Kathrin Wurz
+    Matrikel: 260742
+    Datum: 28.04.2019
+    Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. 
+     Er wurde nicht kopiert und auch nicht diktiert.*/
+
+
+
+
+     html {
+        font-family: 'Pompiere', cursive;
+        background-color: rgb(252, 199, 208);
+        color: white;
+        font-size: 35px;
+    }
+    
+    
+    h1 {
+        font-family: 'Londrina Outline', cursive;
+        color: white;
+        text-align: center;
+        font-size: 60px;
+    }
+    
+
+    li {
+        list-style-type: none;
+      }
+      li::before  {
+        content: "🍦 ";
+        font-size: 25px;
+      }
+    
+
+
+    #preis {
+        margin-top: 40px;
+        font-size: 40px;
+        font-style: italic;
+    }
+    
+    
+
+    
+        fieldset {
+            width: 550px;
+            margin: 50px;
+            border-color: white;
+        }
+    
+    
+    
+        #bestellUebersichtID {
+            width: 550px;
+            top: 100px;
+            right: 50px;
+            position: fixed;
+            
+    
+    
+        }
+    
+        button {
+            font-family: 'Pompiere', cursive;
+            font-size: 15px;
+            height: 100px;
+            width: 100px;
+            border-radius: 50px;
+            border: 1px solid white;
+            color: white;
+            background-color: rgb(235, 176, 186);
+    
+        }
+    
+        #buttonID {
+            font-family: 'Pompiere', cursive;
+            top: 200px;
+            right: 150px;
+            position: fixed;
+            border: none;
+        }
+
+
+        label::after {
+            content:"";
+            display: block;
+            padding: 5px;
+            margin: 5px;
+
+        }
+
+        #gesamtSummeID {
+            margin: 20px;
+            font-size: 40px;
+            font-style: italic;
+        }
+
+        input {
+            font-family: 'Pompiere', cursive;
+            font-size: 20px;
+            margin: 10px;
+            color: grey;
+
+        }
+    
+    

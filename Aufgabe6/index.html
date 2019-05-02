@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Aufgabe 5: Eisdealer re-loaded</title>
+
+	<!-- Aufgabe: Aufgabe 5: Eisdealer re-loaded
+     Name: Kathrin Wurz
+     Matrikel: 260742
+     Datum: 28.04.2019 
+     Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. 
+     Er wurde nicht kopiert und auch nicht diktiert.-->
+
+	<script src="js/eisDealerDaten.js"></script>
+	<script src="js/main.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Londrina+Outline" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Pompiere" rel="stylesheet">
+
+
+</head>
+
+
+<body>
+
+	<header>
+		<h1>Eisdealer 🍨</h1>
+	</header>
+
+	<fieldset>
+		<legend>Lieferoptionen</legend>
+		<input type="checkbox" name="lieferung" id="Abholung" value="0" />
+		<label for="lieferung">Abholung</label>
+		<br>
+		<input type="checkbox" name="lieferung" id="Lieferung nach Hause" value="3" />
+		<label for="lieferung">Lieferung nach Hause (+3,00€)</label>
+	</fieldset>
+
+	<fieldset id="kundenDatenID">
+		<legend>Bitte ausfüllen</legend>
+		<input type="text" name="Name" placeholder="Nachname" required />
+		<br>
+		<input type="text" name=" Vorname" placeholder="Vorname" required />
+		<br>
+		<input type="text" name=" Straße" placeholder="Straße" required />
+		<br>
+		<input type="text" name=" Hausnummer" placeholder="Hausnummer" required />
+		<br>
+		<input type="text" name=" Postleitzahl" placeholder="Postleitzahl" pattern="[0-9]{5}" required />
+		<br>
+		<input type="text" name=" Ort" placeholder="Ort" required />
+	</fieldset>
+
+
+	<fieldset id="bestellUebersichtID">
+		<legend>Bestellübersicht</legend>
+		<div id="eisUndToppingID"></div>
+		<div id="behaelterID"></div>
+		<div id="lieferungID"></div>
+		<div id="gesamtSummeID"></div>
+		<button id="buttonID">Bestellung überprüfen</button>
+	</fieldset>
+
+</body>
+
+</html>

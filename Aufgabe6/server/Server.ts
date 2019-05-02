@@ -1,6 +1,5 @@
 import * as Http from "http"; // http-Objekt wird aus "http" importiert; TS wird vermittelt, dass Node verwendet wird
-
-namespace aufgabe6 { // namespace mit dem Namen "aufgabe6" wird erstellt
+// namespace mit dem Namen "aufgabe6" wird erstellt
 	console.log("Starting server"); // in der Konsole wird "Starting Server" ausgegeben
 	let port: number = Number(process.env.PORT); // eine neue Variable vom Typ Number und mit dem Namen "port" wird erstellt, auf die der Server hören soll
 	if (!port) // wenn port nicht richtig/anders ist, soll nächste Zeile ausgelesen werden
@@ -17,12 +16,13 @@ namespace aufgabe6 { // namespace mit dem Namen "aufgabe6" wird erstellt
 
 	function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void { // eine neue Funktion vom Typ void und mit dem Namen "handleRequest" wird erstellt, request_ speichert eingehende Nachrichten von port, _response speichert die Antwort vom Server
 		console.log("I hear voices!"); // in der Konsole wird "I hear voices!" ausgegeben, sobald die Funktion "handleRequest" ausgeführt wird
-
+		console.log (_request.url);
 		_response.setHeader("content-type", "text/html; charset=utf-8"); // Header-Werte für Header-Objekt werden definiert; die Contentart, die Art des Dokuments "text/html" und die Unicode-Codierung "charset=utf-8" sind vorgegeben
 		_response.setHeader("Access-Control-Allow-Origin", "*"); // "Acess-Control-Allow-Origin" wird als Header-Wert festgelegt, erlaubt Webbrowsern oder Clients den Zugriff über einen anderen Server oder andere Domain
 
-		_response.write(_request.url); // _request.url wird in _response.write in der URL geschrieben, vom Server so empfangen
+		_response.write(_request.url); // _request.url wird in _response.write in der URL geschrieben, vom Server so empfangen --- 2.4 Was hinter Schrägstrich in der URL eingetragen wird, steht dann auch im Browser 
+		
 
 		_response.end(); // _response wird beendet; der Server bekommt die Nachricht, dass request nun fertig ist
 	} // die Funktion "handleRequest" wird geschlossen
-} // namespace aufgabe 6 wird beendet
+ // namespace aufgabe 6 wird beendet
