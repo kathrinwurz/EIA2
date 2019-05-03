@@ -1,12 +1,12 @@
-/* Aufgabe: Aufgabe 5: Eisdealer re-loaded
+/* Aufgabe: AAufgabe 6: Erster Node Server
     Name: Kathrin Wurz
     Matrikel: 260742
-    Datum: 28.04.2019
+    Datum: 03.05.2019
     Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. 
      Er wurde nicht kopiert und auch nicht diktiert.*/
 
 
-namespace aufgabe5 {
+namespace aufgabe6 {
 
     export interface EisdealerDaten {
         bezeichnung: string;
@@ -37,7 +37,7 @@ namespace aufgabe5 {
         "toppingSorten": [
             { bezeichnung: "Sahne", preis: 1, inputtype: "number" },
             { bezeichnung: "Streusel", preis: 1, inputtype: "number" },
-            { bezeichnung: "Schokosoße", preis: 1, inputtype: "number" },
+            { bezeichnung: "Schokososse", preis: 1, inputtype: "number" },
             { bezeichnung: "Krokant", preis: 1, inputtype: "number" }
         ],
 

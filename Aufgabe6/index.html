@@ -3,12 +3,12 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Aufgabe 5: Eisdealer re-loaded</title>
+	<title>Aufgabe 6: Erster Node Server</title>
 
-	<!-- Aufgabe: Aufgabe 5: Eisdealer re-loaded
+	<!-- Aufgabe: Aufgabe 6: Erster Node Server
      Name: Kathrin Wurz
      Matrikel: 260742
-     Datum: 28.04.2019 
+     Datum: 03.05.2019 
      Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. 
      Er wurde nicht kopiert und auch nicht diktiert.-->
 
@@ -24,16 +24,18 @@
 
 <body>
 
+	<form id="formID" action="https://eia2-kathrin.herokuapp.com/" method="get" target="_blank"> 
+
 	<header>
 		<h1>Eisdealer 🍨</h1>
 	</header>
 
 	<fieldset>
 		<legend>Lieferoptionen</legend>
-		<input type="checkbox" name="lieferung" id="Abholung" value="0" />
+		<input type="checkbox" name="lieferung" id="Abholung" preis="0" value="Abholen" />
 		<label for="lieferung">Abholung</label>
 		<br>
-		<input type="checkbox" name="lieferung" id="Lieferung nach Hause" value="3" />
+		<input type="checkbox" name="lieferung" id="Lieferung nach Hause" preis="3" value="Lieferung nach Hause"/>
 		<label for="lieferung">Lieferung nach Hause (+3,00€)</label>
 	</fieldset>
 
@@ -43,7 +45,7 @@
 		<br>
 		<input type="text" name=" Vorname" placeholder="Vorname" required />
 		<br>
-		<input type="text" name=" Straße" placeholder="Straße" required />
+		<input type="text" name=" Strasse" placeholder="Straße" required />
 		<br>
 		<input type="text" name=" Hausnummer" placeholder="Hausnummer" required />
 		<br>
@@ -59,9 +61,9 @@
 		<div id="behaelterID"></div>
 		<div id="lieferungID"></div>
 		<div id="gesamtSummeID"></div>
-		<button id="buttonID">Bestellung überprüfen</button>
+		<button type="submit" id="buttonID">Bestellung überprüfen</button>
 	</fieldset>
-
+</form>
 </body>
 
 </html>

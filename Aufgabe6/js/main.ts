@@ -1,13 +1,13 @@
-/* Aufgabe: Aufgabe 5: Eisdealer re-loaded
+/* Aufgabe: Aufgabe 6: Erster Node Server
     Name: Kathrin Wurz
     Matrikel: 260742
-    Datum: 28.04.2019
+    Datum: 03.05.2019
     Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. 
     Er wurde nicht kopiert und auch nicht diktiert.*/
 
 
 
-namespace aufgabe5 {
+namespace aufgabe6 {
 
     window.addEventListener("load", init);
 
@@ -32,7 +32,7 @@ namespace aufgabe5 {
 /* Elemente erstellen */ 
 
     function elemente(daten: KeyArray): void {
-        document.body.appendChild(fieldset);
+        document.getElementById("formID").appendChild(fieldset);
         legend.innerHTML = "Unser Sortiment (je Kugel & Topping 1,00€ - Becher/Waffel gratis)";
         fieldset.appendChild(legend);
         for (let datenArray in daten) {
@@ -51,9 +51,10 @@ namespace aufgabe5 {
 
         if (sortimentAuswahl.inputtype == "radio") {
             input.setAttribute("type", sortimentAuswahl.inputtype);
-            input.setAttribute("name", "radiobutton");
+            input.setAttribute("name", "Behaelter");
             input.setAttribute("preis", "0");
             input.setAttribute("id", sortimentAuswahl.bezeichnung);
+            input.setAttribute("value", sortimentAuswahl.bezeichnung);
         }
 
         if (sortimentAuswahl.inputtype == "number") {
@@ -105,7 +106,7 @@ namespace aufgabe5 {
             }
 
             if (bestellEingabe[i].checked == true && bestellEingabe[i].name == "lieferung") {
-                let gesamtPreis: number = Number(bestellEingabe[i].getAttribute("value"));
+                let gesamtPreis: number = Number(bestellEingabe[i].getAttribute("preis"));
                 startSumme += gesamtPreis;
                 document.getElementById("gesamtSummeID").innerHTML = startSumme.toFixed(2).toString() + " " + "€";
                 let lieferWahl: HTMLElement = document.createElement("li");

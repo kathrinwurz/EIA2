@@ -1,16 +1,16 @@
-/* Aufgabe: Aufgabe 5: Eisdealer re-loaded
+/* Aufgabe: Aufgabe 6: Erster Node Server
     Name: Kathrin Wurz
     Matrikel: 260742
-    Datum: 28.04.2019
+    Datum: 03.05.2019
     Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
     Er wurde nicht kopiert und auch nicht diktiert.*/
-var aufgabe5;
-(function (aufgabe5) {
+var aufgabe6;
+(function (aufgabe6) {
     window.addEventListener("load", init);
     let fieldset = document.createElement("fieldset");
     let legend = document.createElement("legend");
     function init(_event) {
-        elemente(aufgabe5.sortimentArray);
+        elemente(aufgabe6.sortimentArray);
         document.getElementById("buttonID").addEventListener("click", bestellungPruefen);
         let fieldsets = document.getElementsByTagName("fieldset");
         for (let i = 0; i < fieldsets.length; i++) {
@@ -20,7 +20,7 @@ var aufgabe5;
     }
     /* Elemente erstellen */
     function elemente(daten) {
-        document.body.appendChild(fieldset);
+        document.getElementById("formID").appendChild(fieldset);
         legend.innerHTML = "Unser Sortiment (je Kugel & Topping 1,00€ - Becher/Waffel gratis)";
         fieldset.appendChild(legend);
         for (let datenArray in daten) {
@@ -36,9 +36,10 @@ var aufgabe5;
         label.innerHTML = sortimentAuswahl.bezeichnung;
         if (sortimentAuswahl.inputtype == "radio") {
             input.setAttribute("type", sortimentAuswahl.inputtype);
-            input.setAttribute("name", "radiobutton");
+            input.setAttribute("name", "Behaelter");
             input.setAttribute("preis", "0");
             input.setAttribute("id", sortimentAuswahl.bezeichnung);
+            input.setAttribute("value", sortimentAuswahl.bezeichnung);
         }
         if (sortimentAuswahl.inputtype == "number") {
             input.setAttribute("type", sortimentAuswahl.inputtype);
@@ -76,7 +77,7 @@ var aufgabe5;
                 document.getElementById("behaelterID").appendChild(behaelterWahl);
             }
             if (bestellEingabe[i].checked == true && bestellEingabe[i].name == "lieferung") {
-                let gesamtPreis = Number(bestellEingabe[i].getAttribute("value"));
+                let gesamtPreis = Number(bestellEingabe[i].getAttribute("preis"));
                 startSumme += gesamtPreis;
                 document.getElementById("gesamtSummeID").innerHTML = startSumme.toFixed(2).toString() + " " + "€";
                 let lieferWahl = document.createElement("li");
@@ -123,5 +124,5 @@ var aufgabe5;
             alert(`${kundenDaten} fehlt. Bitte noch ausfüllen.👇🏻`);
         }
     }
-})(aufgabe5 || (aufgabe5 = {}));
+})(aufgabe6 || (aufgabe6 = {}));
 //# sourceMappingURL=main.js.map
