@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const Http = require("http"); // http-Objekt wird aus "http" importiert; TS wird vermittelt, dass Node verwendet wird
-// namespace mit dem Namen "aufgabe6" wird erstellt
 console.log("Starting server"); // in der Konsole wird "Starting Server" ausgegeben
 let port = Number(process.env.PORT); // eine neue Variable vom Typ Number und mit dem Namen "port" wird erstellt, auf die der Server hören soll
 if (!port) // wenn port nicht richtig/anders ist, soll nächste Zeile ausgelesen werden
@@ -19,7 +18,7 @@ function handleRequest(_request, _response) {
     _response.setHeader("content-type", "text/html; charset=utf-8"); // Header-Werte für Header-Objekt werden definiert; die Contentart, die Art des Dokuments "text/html" und die Unicode-Codierung "charset=utf-8" sind vorgegeben
     _response.setHeader("Access-Control-Allow-Origin", "*"); // "Acess-Control-Allow-Origin" wird als Header-Wert festgelegt, erlaubt Webbrowsern oder Clients den Zugriff über einen anderen Server oder andere Domain
     _response.write(_request.url); // _request.url wird in _response.write in der URL geschrieben, vom Server so empfangen --- 2.4 Was hinter Schrägstrich in der URL eingetragen wird, steht dann auch im Browser 
+    console.log(_request.url);
     _response.end(); // _response wird beendet; der Server bekommt die Nachricht, dass request nun fertig ist
 } // die Funktion "handleRequest" wird geschlossen
-// namespace aufgabe 6 wird beendet
 //# sourceMappingURL=Server.js.map
