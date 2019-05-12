@@ -23,7 +23,7 @@ function handleRequest(_request, _response) {
     _response.write("<h5>Wir bestätigen hiermit folgende Artikel:</h5>");
     let url = Url.parse(_request.url, true);
     for (let key in url.query)
-        _response.write("<span>" + key + ":" + url.query[key] + "</span");
+        _response.write("<p>" + key + url.query[key] + "</p> <br>");
     _response.end(); // _response wird beendet; der Server bekommt die Nachricht, dass request nun fertig ist
 } // die Funktion "handleRequest" wird geschlossen
 //# sourceMappingURL=Server.js.map

@@ -31,7 +31,7 @@ import * as Url from "url";
 		_response.write("<h5>Wir bestätigen hiermit folgende Artikel:</h5>");
 		let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
 		for (let key in url.query) 
-			_response.write("<span>" + key + ":" + url.query[key] + "</span");
+			_response.write("<p>" + key + url.query[key] + "</p> <br>");
 		
 
 
