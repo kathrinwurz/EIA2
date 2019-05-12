@@ -2,10 +2,10 @@
 	"name": "miniserver",
 	"version": "1.0.0",
 	"description": "Minimal server just bouncing the URL",
-	"author": "Kathrin Wurz",
+	"author": "Kathrin",
 	"main": "Server.js",
 	"scripts": {
-		"start": "node Aufgabe6/server/Server.js"
+		"start": "node Aufgabe7/server/Server.js"
 	},
 	"engines": {
 		"node": "8.11.3"
