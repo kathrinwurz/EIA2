@@ -182,25 +182,27 @@ namespace aufgabe7 {
     }
 
 
+
+    
     function urlErstellen(): void {
         let kundenBestellung: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
         let url: string = "https://eia2-kathrin.herokuapp.com/?";
         for (let i: number = 0; i < kundenBestellung.length; i++) {
 
             if (kundenBestellung[i].name == "Lieferauswahl" && kundenBestellung[i].checked == true) {
-                url += `${kundenBestellung[i].name}:${kundenBestellung[i].value}&`;
+                url += `${kundenBestellung[i].name}: ${kundenBestellung[i].value}&`;
             }
 
             if (kundenBestellung[i].name == "Behaelter" && kundenBestellung[i].checked == true) {
-                url += `${kundenBestellung[i].name}:${kundenBestellung[i].value}&`;
+                url += `${kundenBestellung[i].name}: ${kundenBestellung[i].value}&`;
             }
 
             if (kundenBestellung[i].type == "number" && Number(kundenBestellung[i].value) > 0) {
-                url += `${kundenBestellung[i].name}:${kundenBestellung[i].value}&`;
+                url += `${kundenBestellung[i].value} Kugel(n): ${kundenBestellung[i].name}&`;
             }
 
             if (kundenBestellung[i].type == "checkbox" && kundenBestellung[i].checked == true) {
-                url += `${kundenBestellung[i].name}:${kundenBestellung[i].value}&`;
+                url += `${kundenBestellung[i].name}: ${kundenBestellung[i].value}&`;
             }
 
 

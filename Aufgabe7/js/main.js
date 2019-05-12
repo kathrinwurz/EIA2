@@ -145,16 +145,16 @@ var aufgabe7;
         let url = "https://eia2-kathrin.herokuapp.com/?";
         for (let i = 0; i < kundenBestellung.length; i++) {
             if (kundenBestellung[i].name == "Lieferauswahl" && kundenBestellung[i].checked == true) {
-                url += `${kundenBestellung[i].name}:${kundenBestellung[i].value}&`;
+                url += `${kundenBestellung[i].name}: ${kundenBestellung[i].value}&`;
             }
             if (kundenBestellung[i].name == "Behaelter" && kundenBestellung[i].checked == true) {
-                url += `${kundenBestellung[i].name}:${kundenBestellung[i].value}&`;
+                url += `${kundenBestellung[i].name}: ${kundenBestellung[i].value}&`;
             }
             if (kundenBestellung[i].type == "number" && Number(kundenBestellung[i].value) > 0) {
-                url += `${kundenBestellung[i].name}:${kundenBestellung[i].value}&`;
+                url += `${kundenBestellung[i].value} Kugel(n): ${kundenBestellung[i].name}&`;
             }
             if (kundenBestellung[i].type == "checkbox" && kundenBestellung[i].checked == true) {
-                url += `${kundenBestellung[i].name}:${kundenBestellung[i].value}&`;
+                url += `${kundenBestellung[i].name}: ${kundenBestellung[i].value}&`;
             }
         }
         sendRequestWithCustomData(url);

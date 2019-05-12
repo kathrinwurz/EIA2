@@ -55,10 +55,7 @@
             width: 550px;
             top: 100px;
             right: 50px;
-            position: fixed;
-            
-    
-    
+            position: absolute;
         }
     
         button {
@@ -75,9 +72,9 @@
     
         #buttonID {
             font-family: 'Pompiere', cursive;
-            top: 200px;
-            right: 150px;
-            position: fixed;
+            top: 50px;
+            right: 50px;
+            position: absolute;
             border: none;
         }
 
@@ -85,7 +82,7 @@
         label::after {
             content:"";
             display: block;
-            padding: 5px;
+            padding: 2px;
             margin: 5px;
 
         }
@@ -108,10 +105,9 @@
         #serverID {
             border: 1px solid white;
             margin: 50px;
-            top: 50px;
             right: 50px;
             float: right;
-            width: auto;
+            width: 600px;
             margin-right: 90px;
         }
     

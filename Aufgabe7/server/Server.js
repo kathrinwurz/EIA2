@@ -18,9 +18,10 @@ function handleRequest(_request, _response) {
     console.log(_request.url);
     _response.setHeader("content-type", "text/html; charset=utf-8"); // Header-Werte für Header-Objekt werden definiert; die Contentart, die Art des Dokuments "text/html" und die Unicode-Codierung "charset=utf-8" sind vorgegeben
     _response.setHeader("Access-Control-Allow-Origin", "*"); // "Acess-Control-Allow-Origin" wird als Header-Wert festgelegt, erlaubt Webbrowsern oder Clients den Zugriff über einen anderen Server oder andere Domain
-    // _response.write(_request.url); // _request.url wird in _response.write in der URL geschrieben, vom Server so empfangen --- 2.4 Was hinter Schrägstrich in der URL eingetragen wird, steht dann auch im Browser 
-    //console.log (_request.url);
-    _response.write("<h5>Wir bestätigen hiermit folgende Artikel:</h5>");
+    _response.write(_request.url); // _request.url wird in _response.write in der URL geschrieben, vom Server so empfangen --- 2.4 Was hinter Schrägstrich in der URL eingetragen wird, steht dann auch im Browser 
+    console.log(_request.url);
+    /*Aufgabe 7*/
+    _response.write("<h3>Wir bestätigen hiermit folgende Artikel:</h3>");
     let url = Url.parse(_request.url, true);
     for (let key in url.query)
         _response.write("<p>" + key + url.query[key] + "</p> <br>");
