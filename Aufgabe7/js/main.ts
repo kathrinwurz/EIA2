@@ -203,6 +203,7 @@ namespace aufgabe7 {
                 url += `${kundenBestellung[i].name}:${kundenBestellung[i].value}&`;
             }
 
+
         }
 
         sendRequestWithCustomData(url);

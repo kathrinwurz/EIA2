@@ -28,11 +28,11 @@ import * as Url from "url";
 		// _response.write(_request.url); // _request.url wird in _response.write in der URL geschrieben, vom Server so empfangen --- 2.4 Was hinter Schrägstrich in der URL eingetragen wird, steht dann auch im Browser 
 		//console.log (_request.url);
 		
-		_response.write("<h5>Hier sind deine bestellten Artikel:</h5>");
+		_response.write("<h5>Wir bestätigen hiermit folgende Artikel:</h5>");
 		let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
-		for (let key in url.query) {
-			_response.write("<p>" + key + ":" + url.query[key] + "</p");
-		}
+		for (let key in url.query) 
+			_response.write("<span>" + key + ":" + url.query[key] + "</span");
+		
 
 
 		_response.end(); // _response wird beendet; der Server bekommt die Nachricht, dass request nun fertig ist
