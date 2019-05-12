@@ -1,7 +1,7 @@
 /*  Aufgabe 7: Serverseitige Verarbeitung
     Name: Kathrin Wurz
     Matrikel: 260742
-    Datum: 03.05.2019
+    Datum: 12.05.2019
     Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. 
      Er wurde nicht kopiert und auch nicht diktiert.*/
 
