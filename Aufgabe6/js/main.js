@@ -108,20 +108,11 @@ var aufgabe6;
                 behaelterFehlt = 1;
             }
         }
-        if (lieferungFehlt == 0) {
-            alert("Bitte noch eine Lieferoption wählen.👇🏻");
-        }
-        if (eisToppingFehlt == 0) {
-            alert("Bitte noch ein Eis/Topping wählen.👇🏻");
-        }
-        if (behaelterFehlt == 0) {
-            alert("Bitte noch einen Behälter wählen.👇🏻");
-        }
-        if (kundenDaten.length == 0) {
+        if (lieferungFehlt == 1 && eisToppingFehlt == 1 && behaelterFehlt == 1) {
             alert("Danke für deine Bestellung! 👍🏻");
         }
         else {
-            alert(`${kundenDaten} fehlt. Bitte noch ausfüllen.👇🏻`);
+            alert("Bitte die fehlenden Angaben ausfüllen.");
         }
     }
 })(aufgabe6 || (aufgabe6 = {}));

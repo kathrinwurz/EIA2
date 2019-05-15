@@ -116,8 +116,6 @@ namespace aufgabe6 {
             
         }
     }
-
-
 /*Funktion zum Überprüfen der Bestellung*/ 
 
 function bestellungPruefen(_event: Event): void {
