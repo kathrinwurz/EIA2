@@ -2,14 +2,13 @@
 
 import * as Http from "http"; // http-Objekt wird aus "http" importiert; TS wird vermittelt, dass Node verwendet wird
 import * as Url from "url";
-import * as Mongo from "mongodb";
+//import * as Mongo from "mongodb";
 
-Mongo.connect("mongodb+srv://kathrinsmongo:<hallo12345>@kathrin-eia2-k9lfi.mongodb.net/test?retryWrites=true", mongoHeroku)
+//Mongo.connect("mongodb+srv://kathrinsmongo:<hallo12345>@kathrin-eia2-k9lfi.mongodb.net/test?retryWrites=true", mongoHeroku)
 
 
-function mongoHeroku(datenbank: any): void {
+//function mongoHeroku(datenbank: any): void {}
 
-}
 
 console.log("Starting server"); // in der Konsole wird "Starting Server" ausgegeben
 let port: number = Number(process.env.PORT); // eine neue Variable vom Typ Number und mit dem Namen "port" wird erstellt, auf die der Server hören soll
