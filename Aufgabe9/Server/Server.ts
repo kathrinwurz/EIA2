@@ -39,7 +39,7 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
                 matrikel: parseInt(query["matrikel"])
             };
             Database.insert(student);
-            respond(_response, "storing data");
+            respond(_response, "Daten werden gespeichert");
             break;
         case "refresh":
             Database.findAll(findCallback);
