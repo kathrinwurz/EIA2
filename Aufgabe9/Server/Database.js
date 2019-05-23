@@ -12,9 +12,8 @@ let db;
 let students;
 // running on heroku?
 if (process.env.NODE_ENV == "production") {
-    //    databaseURL = "mongodb://kathrinsmongo:hallo12345@kathrin-eia2-k9lfi.mongodb.net/database";
-    databaseURL = "mongodb+srv://testuser:testpassword@eia2-57vpd.mongodb.net/eia2";
-    databaseName = "eia2";
+    databaseURL = "mongodb://kathrinsmongo:hallo12345@kathrin-eia2-k9lfi.mongodb.net/mongoEIA2";
+    databaseName = "mongoEIA2";
 }
 // try to connect to database, then activate callback "handleConnect" 
 Mongo.MongoClient.connect(databaseURL, { connectTimeoutMS: 8000 }, handleConnect); // wird von Mongo bereitgestellt, nach 8 Sek. Time-Out, nach Verbindung handleconnnect aufrufen 
