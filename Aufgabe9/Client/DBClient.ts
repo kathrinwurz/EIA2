@@ -11,7 +11,7 @@ namespace DBClient {
         document.getElementById("matrikelID").addEventListener("click", search);
     }
 
-    function search(_event: Event):void{
+    function search(_event: Event): void {
         let inputs: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
         let query: string = "command=search";
         query += "&matrikel=" + inputs[3].value;

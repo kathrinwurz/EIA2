@@ -28,7 +28,7 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
     console.log("Request received");
 
     let query: AssocStringString = <AssocStringString> Url.parse(_request.url, true).query;
-    var command: string = query["command"];
+    let command: string = query["command"];
     let matrikel: string = query["matrikel"];
 
     switch (command) {
