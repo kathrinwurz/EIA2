@@ -44,12 +44,12 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
         case "refresh":
             Database.findAll(findCallback);
             break;
-            case "search":
-                for(let key in query){
-                    if(key == "matrikel"){
-                        Database.searchMatrikel(Number(matrikel), findCallback);
-                    }
+        case "search":
+            for(let key in query){
+                if(key == "matrikel"){
+                    Database.matrikelNummerSuchen(Number(matrikel), findCallback);
                 }
+            }
                 break;
         default:
             respond(_response, "unknown command: " + command);

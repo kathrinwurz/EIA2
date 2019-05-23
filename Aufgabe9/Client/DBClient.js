@@ -8,7 +8,7 @@ var DBClient;
         let refreshButton = document.getElementById("refresh");
         insertButton.addEventListener("click", insert);
         refreshButton.addEventListener("click", refresh);
-        document.getElementById("MaInsert").addEventListener("click", search);
+        document.getElementById("matrikelID").addEventListener("click", search);
     }
     function search(_event) {
         let inputs = document.getElementsByTagName("input");

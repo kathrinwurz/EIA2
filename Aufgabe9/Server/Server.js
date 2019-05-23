@@ -39,7 +39,7 @@ function handleRequest(_request, _response) {
         case "search":
             for (let key in query) {
                 if (key == "matrikel") {
-                    Database.searchMatrikel(Number(matrikel), findCallback);
+                    Database.matrikelNummerSuchen(Number(matrikel), findCallback);
                 }
             }
             break;
