@@ -1,7 +1,6 @@
 namespace DBClient {
     window.addEventListener("load", init);
-    let serverAddress: string = "http://localhost:8100";
-    //let serverAddress: string = "https://<your>.herokuapp.com/";
+    let serverAddress: string = "https://eia2-kathrin.herokuapp.com/";
 
     function init(_event: Event): void {
         console.log("Init");

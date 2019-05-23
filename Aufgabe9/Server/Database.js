@@ -12,16 +12,16 @@ let db;
 let students;
 // running on heroku?
 if (process.env.NODE_ENV == "production") {
-    //    databaseURL = "mongodb://username:password@hostname:port/database";
+    //    databaseURL = "mongodb://kathrinsmongo:hallo12345@kathrin-eia2-k9lfi.mongodb.net/database";
     databaseURL = "mongodb+srv://testuser:testpassword@eia2-57vpd.mongodb.net/eia2";
     databaseName = "eia2";
 }
 // try to connect to database, then activate callback "handleConnect" 
-Mongo.MongoClient.connect(databaseURL, { connectTimeoutMS: 8000 }, handleConnect);
+Mongo.MongoClient.connect(databaseURL, { connectTimeoutMS: 8000 }, handleConnect); // wird von Mongo bereitgestellt, nach 8 Sek. Time-Out, nach Verbindung handleconnnect aufrufen 
 // connect-handler receives two standard parameters, an error object and a database client object
 function handleConnect(_e, _client) {
     if (_e)
-        console.log("Unable to connect to database, error: ", _e);
+        console.log("Unable to connect to database, error: ", _e); //Ausgabe Error 
     else {
         console.log("Connected to database!");
         db = _client.db(databaseName);
