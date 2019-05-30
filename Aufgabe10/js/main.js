@@ -193,23 +193,23 @@ function fische(_x, _y) {
 function tintenfisch(_x, _y) {
     let tintiKreis = new Path2D();
     tintiKreis.arc(_x, _y, 50, 0, 2 * Math.PI);
-    crc.fillStyle = "#551a8b";
+    crc.fillStyle = "#57406c";
     crc.fill(tintiKreis);
     let tintiBein1 = new Path2D();
     tintiBein1.ellipse(_x - 45, _y + 52, 10, 40, 10, 0, 2 * Math.PI);
-    crc.fillStyle = "#551a8b";
+    crc.fillStyle = "#57406c";
     crc.fill(tintiBein1);
     let tintiBein2 = new Path2D();
     tintiBein2.ellipse(_x - 20, _y + 65, 10, 40, 9.9, 0, 2 * Math.PI);
-    crc.fillStyle = "#551a8b";
+    crc.fillStyle = "#57406c";
     crc.fill(tintiBein2);
     let tintiBein3 = new Path2D();
     tintiBein3.ellipse(_x + 5, _y + 65, 10, 40, 9.8, 0, 2 * Math.PI);
-    crc.fillStyle = "#551a8b";
+    crc.fillStyle = "#57406c";
     crc.fill(tintiBein3);
     let tintiBein4 = new Path2D();
     tintiBein4.ellipse(_x - 60, _y + 30, 10, 40, 10, 0, 2 * Math.PI);
-    crc.fillStyle = "#551a8b";
+    crc.fillStyle = "#57406c";
     crc.fill(tintiBein4);
     let auge1 = new Path2D();
     auge1.arc(_x - 10, _y - 15, 8, 0, 2 * Math.PI);
@@ -231,5 +231,15 @@ function tintenfisch(_x, _y) {
     pupille1.arc(_x - 10, _y - 15, 5, 0, 2 * Math.PI);
     crc.fillStyle = "#000000";
     crc.fill(pupille1);
+    let mund = new Path2D();
+    mund.moveTo(_x - 30, _y - 5);
+    mund.bezierCurveTo(_x - 50, _y + 50, _x + 20, _y + 40, _x + 20, _y + 20);
+    crc.strokeStyle = "#362645";
+    crc.stroke(mund);
+    let mund1 = new Path2D();
+    mund1.moveTo(_x - 30, _y - 5);
+    mund1.bezierCurveTo(_x - 40, _y + 40, _x + 10, _y + 30, _x + 20, _y + 20);
+    crc.strokeStyle = "#362645";
+    crc.stroke(mund1);
 }
 //# sourceMappingURL=main.js.map
