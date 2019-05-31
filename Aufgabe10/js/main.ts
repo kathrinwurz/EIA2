@@ -15,13 +15,8 @@ function init(): void {
     canvas = document.getElementsByTagName("canvas")[0];
     crc = canvas.getContext("2d");
 
-    //Wasser 
-    crc.rect(0, 0, 1000, 700);
-    crc.fillStyle = "#00868b";
-    crc.fill();
-
-
     //Funktionsaufrufe 
+    wasser();
     boden();
     gras(700, 500);
     gras(650, 500);
@@ -34,9 +29,9 @@ function init(): void {
     gras(30, 550);
     gras(70, 480);
     gras(90, 500);
-    muscheln1(680, 450);
-    muscheln2(320, 550);
-    muscheln3(100, 400);
+    muscheln(680, 450);
+    muscheln(320, 550);
+    muscheln(100, 400);
     tintenfisch(400, 185);
 
 
@@ -63,6 +58,14 @@ function init(): void {
 }
 
 
+//Wasser 
+function wasser(): void {
+    let wasser: Path2D = new Path2D();
+    crc.rect(0, 0, 1000, 700);
+    crc.fillStyle = "#00868b";
+    crc.fill();
+}
+
 
 //Boden
 function boden(): void {
@@ -71,6 +74,7 @@ function boden(): void {
     crc.fillStyle = "#CDBA96";
     crc.fill(boden);
 }
+
 
 //Luftblasen
 function luftblasen(_x: number, _y: number): void {
@@ -167,31 +171,13 @@ function gras(_x: number, _y: number): void {
 
 
 //Muscheln
-function muscheln1(_x: number, _y: number): void {
-    let muschel1: Path2D = new Path2D();
-    muschel1.moveTo(_x + 75, _y + 40);
-    muschel1.bezierCurveTo(_x + 130, _y + 62.5, _x + 130, _y + 25, _x + 100, _y + 25);
-    muschel1.bezierCurveTo(_x + 85, _y + 25, _x + 75, _y + 37, _x + 75, _y + 40);
+function muscheln(_x: number, _y: number): void {
+    let muschel: Path2D = new Path2D();
+    muschel.moveTo(_x + 75, _y + 40);
+    muschel.bezierCurveTo(_x + 130, _y + 62.5, _x + 130, _y + 25, _x + 100, _y + 25);
+    muschel.bezierCurveTo(_x + 85, _y + 25, _x + 75, _y + 37, _x + 75, _y + 40);
     crc.fillStyle = "#fff8dc";
-    crc.fill(muschel1);
-}
-
-function muscheln2(_x: number, _y: number): void {
-    let muschel2: Path2D = new Path2D();
-    muschel2.moveTo(_x + 75, _y + 40);
-    muschel2.bezierCurveTo(_x + 130, _y + 62.5, _x + 130, _y + 25, _x + 100, _y + 25);
-    muschel2.bezierCurveTo(_x + 85, _y + 25, _x + 75, _y + 37, _x + 75, _y + 40);
-    crc.fillStyle = "#fff8dc";
-    crc.fill(muschel2);
-}
-
-function muscheln3(_x: number, _y: number): void {
-    let muschel3: Path2D = new Path2D();
-    muschel3.moveTo(_x + 75, _y + 40);
-    muschel3.bezierCurveTo(_x + 130, _y + 62.5, _x + 130, _y + 25, _x + 100, _y + 25);
-    muschel3.bezierCurveTo(_x + 85, _y + 25, _x + 75, _y + 37, _x + 75, _y + 40);
-    crc.fillStyle = "#fff8dc";
-    crc.fill(muschel3);
+    crc.fill(muschel);
 }
 
 

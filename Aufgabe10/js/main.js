@@ -10,11 +10,8 @@ let canvas;
 function init() {
     canvas = document.getElementsByTagName("canvas")[0];
     crc = canvas.getContext("2d");
-    //Wasser 
-    crc.rect(0, 0, 1000, 700);
-    crc.fillStyle = "#00868b";
-    crc.fill();
     //Funktionsaufrufe 
+    wasser();
     boden();
     gras(700, 500);
     gras(650, 500);
@@ -27,9 +24,9 @@ function init() {
     gras(30, 550);
     gras(70, 480);
     gras(90, 500);
-    muscheln1(680, 450);
-    muscheln2(320, 550);
-    muscheln3(100, 400);
+    muscheln(680, 450);
+    muscheln(320, 550);
+    muscheln(100, 400);
     tintenfisch(400, 185);
     //Zufall Luftblasen
     for (let i = 0; i < 30; i++) {
@@ -49,6 +46,13 @@ function init() {
         let y = Math.random() * canvas.height;
         fische(x, y);
     }
+}
+//Wasser 
+function wasser() {
+    let wasser = new Path2D();
+    crc.rect(0, 0, 1000, 700);
+    crc.fillStyle = "#00868b";
+    crc.fill();
 }
 //Boden
 function boden() {
@@ -138,29 +142,13 @@ function gras(_x, _y) {
     crc.stroke(pflanze7);
 }
 //Muscheln
-function muscheln1(_x, _y) {
-    let muschel1 = new Path2D();
-    muschel1.moveTo(_x + 75, _y + 40);
-    muschel1.bezierCurveTo(_x + 130, _y + 62.5, _x + 130, _y + 25, _x + 100, _y + 25);
-    muschel1.bezierCurveTo(_x + 85, _y + 25, _x + 75, _y + 37, _x + 75, _y + 40);
+function muscheln(_x, _y) {
+    let muschel = new Path2D();
+    muschel.moveTo(_x + 75, _y + 40);
+    muschel.bezierCurveTo(_x + 130, _y + 62.5, _x + 130, _y + 25, _x + 100, _y + 25);
+    muschel.bezierCurveTo(_x + 85, _y + 25, _x + 75, _y + 37, _x + 75, _y + 40);
     crc.fillStyle = "#fff8dc";
-    crc.fill(muschel1);
-}
-function muscheln2(_x, _y) {
-    let muschel2 = new Path2D();
-    muschel2.moveTo(_x + 75, _y + 40);
-    muschel2.bezierCurveTo(_x + 130, _y + 62.5, _x + 130, _y + 25, _x + 100, _y + 25);
-    muschel2.bezierCurveTo(_x + 85, _y + 25, _x + 75, _y + 37, _x + 75, _y + 40);
-    crc.fillStyle = "#fff8dc";
-    crc.fill(muschel2);
-}
-function muscheln3(_x, _y) {
-    let muschel3 = new Path2D();
-    muschel3.moveTo(_x + 75, _y + 40);
-    muschel3.bezierCurveTo(_x + 130, _y + 62.5, _x + 130, _y + 25, _x + 100, _y + 25);
-    muschel3.bezierCurveTo(_x + 85, _y + 25, _x + 75, _y + 37, _x + 75, _y + 40);
-    crc.fillStyle = "#fff8dc";
-    crc.fill(muschel3);
+    crc.fill(muschel);
 }
 //Fische 
 function fische(_x, _y) {
