@@ -61,7 +61,7 @@ function init(): void {
 //Wasser 
 function wasser(): void {
     let wasser: Path2D = new Path2D();
-    crc.rect(0, 0, 1000, 700);
+    crc.rect(0, 0, 800, 400);
     crc.fillStyle = "#00868b";
     crc.fill();
 }
