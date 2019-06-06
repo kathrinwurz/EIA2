@@ -27,7 +27,7 @@ function handleListen(): void {
 function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
     console.log("Request received");
 
-    let query: AssocStringString = <AssocStringString> Url.parse(_request.url, true).query;
+    let query: AssocStringString = <AssocStringString>Url.parse(_request.url, true).query;
     let command: string = query["command"];
     let matrikel: string = query["matrikel"];
 
@@ -45,12 +45,8 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
             Database.findAll(findCallback);
             break;
         case "search":
-            for(let key in query){
-                if(key == "matrikel"){
-                    Database.matrikelNummerSuchen(Number(matrikel), findCallback);
-                }
-            }
-                break;
+            Database.matrikelNummerSuchen(Number(matrikel), findCallback);
+            break;
         default:
             respond(_response, "unknown command: " + command);
             break;
