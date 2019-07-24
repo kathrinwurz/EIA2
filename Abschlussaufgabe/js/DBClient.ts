@@ -1,0 +1,59 @@
+/*Abschlussaufgabe
+Name: Kathrin Wurz
+Matrikel: 260742
+Datum: .07.2019
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. 
+Er wurde nicht kopiert und auch nicht diktiert.*/
+
+namespace Endabgabe {
+
+    let serverAddress: string = "https://eia2-kathrin.herokuapp.com/";
+
+    export function insert(): void {
+        let query: string = "command=insert";
+        query += "&name=" + namensEingabe + "&punktestand=" + punktestand;
+        sendRequest(query, handleInsertResponse);
+    }
+
+    export function refresh(): void {
+        let query: string = "command=refresh";
+        sendRequest(query, handleFindResponse);
+    }
+
+    function sendRequest(_query: string, _callback: EventListener): void {
+        let xhr: XMLHttpRequest = new XMLHttpRequest();
+        xhr.open("GET", serverAddress + "?" + _query, true);
+        xhr.addEventListener("readystatechange", _callback);
+        xhr.send();
+    }
+
+    function handleInsertResponse(_event: ProgressEvent): void {
+        let xhr: XMLHttpRequest = (<XMLHttpRequest>_event.target);
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            alert(xhr.response);
+        }
+    }
+
+    function handleFindResponse(_event: ProgressEvent): void {
+        let xhr: XMLHttpRequest = (<XMLHttpRequest>_event.target);
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            let fischSpielerArray: Spieler[] = JSON.parse(xhr.response);
+            
+
+            document.getElementById("bestenListeID").innerHTML = "";
+
+            for (let i: number = fischSpielerArray.length; i < 5; i++) {
+                let neuerSpieler = document.createElement("div");
+                document.getElementById("bestenListeID").appendChild(neuerSpieler);
+                neuerSpieler.setAttribute("id", i.toString());
+                neuerSpieler.innerHTML += `${fischSpielerArray[i].name} : ${fischSpielerArray[i].punktestand}`;
+            }
+
+            /* let output: HTMLTextAreaElement = document.getElementsByTagName("textarea")[0];
+            output.value = xhr.response;
+            let responseAsJson: JSON = JSON.parse(xhr.response);
+            console.log(responseAsJson); */
+        }
+    }
+}
+

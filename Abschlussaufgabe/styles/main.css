@@ -1,0 +1,26 @@
+
+html {
+    background-image: linear-gradient(to right, #6ab0f2, #5c9ad5, #4e85b9, #40709e, #335c83);
+}
+
+
+#canvas {
+    border: 5px solid #78B9E5;
+    margin-left: 40px;
+}
+
+h1 {
+    margin: 30px;
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Barrio', cursive;
+    color: #99CFF4;
+}
+
+p {
+    font-family: 'Delius', cursive;
+    width: 1000px;
+    margin-left: 45px;
+    margin-bottom: 20px;
+    color: #99CFF4;
+}
