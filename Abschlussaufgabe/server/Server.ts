@@ -31,7 +31,6 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
 
     let query: Bestenliste = <Bestenliste>Url.parse(_request.url, true).query;
     let command: string = query["command"];
-    /* let Matrikel: string = query["score"]; */
 
     switch (command) {
         case "insert":

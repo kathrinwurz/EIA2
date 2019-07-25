@@ -24,7 +24,6 @@ function handleRequest(_request, _response) {
     console.log("Request received");
     let query = Url.parse(_request.url, true).query;
     let command = query["command"];
-    /* let Matrikel: string = query["score"]; */
     switch (command) {
         case "insert":
             let spieler = {

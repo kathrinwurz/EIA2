@@ -56,17 +56,4 @@ function findAll(_callback) {
     }
 }
 exports.findAll = findAll;
-/* export function searchMatrikel(_score: number, _callback: Function): void {
-    var cursor: Mongo.Cursor = players.find({ score: _score });
-    cursor.toArray(prepareAnswer);
-    // toArray-handler receives two standard parameters, an error object and the array
-    // implemented as inner function, so _callback is in scope
-    function prepareAnswer(_e: Mongo.MongoError, playerArray: Player[]): void {
-        if (_e)
-            _callback("Error" + _e);
-        else
-            // stringify creates a json-string, passed it back to _callback
-            _callback(JSON.stringify(playerArray));
-    }
-} */ 
 //# sourceMappingURL=Database.js.map

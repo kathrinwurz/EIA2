@@ -64,19 +64,21 @@ var Endabgabe;
             }
         }
         zusammenstoss(fisch) {
-            if (Math.sqrt(Math.pow(Math.abs(this.x - fisch.x), 2) + Math.pow(Math.abs(this.y - fisch.y), 2)) < 60 && fisch.groesse > 0) {
+            let xAbstand = Math.abs(this.x - fisch.x);
+            let yAbstand = Math.abs(this.y - fisch.y);
+            if (Math.sqrt(Math.pow(xAbstand, 2) + Math.pow(yAbstand, 2)) < 60) {
                 if (this.groesse > fisch.groesse) {
                     this.groesse++;
                     Endabgabe.punktestand += 10;
-                    return true;
+                    return "tot";
                 }
                 else {
                     alert("Du hast verloren!");
-                    return false;
+                    return "spielEnde";
                 }
             }
             else
-                return false;
+                return "nix";
         }
         move() {
             this.x += this.dx;

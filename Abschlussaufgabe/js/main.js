@@ -17,14 +17,16 @@ var Endabgabe;
     function init() {
         Endabgabe.canvas = document.getElementsByTagName("canvas")[0];
         Endabgabe.crc = Endabgabe.canvas.getContext("2d");
+        Endabgabe.insert();
+        Endabgabe.refresh();
         zeichneHintergrund();
         imageData = Endabgabe.crc.getImageData(0, 0, Endabgabe.canvas.width, Endabgabe.canvas.height);
         spielerfisch = new Endabgabe.Spielerfisch();
         spielerfisch.draw();
         erstelleGrosseFische();
         erstelleKugelfische();
-        erstelleKleineLuftblasen();
-        erstelleGrosseLuftblasen();
+        //erstelleKleineLuftblasen();
+        //erstelleGrosseLuftblasen();
         update();
         console.log(alleObjekteArray);
     }
@@ -34,14 +36,16 @@ var Endabgabe;
         Endabgabe.crc.clearRect(0, 0, Endabgabe.canvas.width, Endabgabe.canvas.height);
         Endabgabe.crc.putImageData(imageData, 0, 0);
         spielerfisch.update();
-        if (Endabgabe.punktestand == 110) {
-            Endabgabe.namensEingabe = prompt("You win! " + "Dein Score: " + Endabgabe.punktestand, "Your Player-Name");
-            spielZuEnde();
-        }
         for (let i = 0; i < alleObjekteArray.length; i++) {
             alleObjekteArray[i].update();
-            if (spielerfisch.zusammenstoss(alleObjekteArray[i]) == true) {
+            if (spielerfisch.zusammenstoss(alleObjekteArray[i]) == "tot") {
                 alleObjekteArray.splice(i, 1);
+            }
+            else if (spielerfisch.zusammenstoss(alleObjekteArray[i]) == "spielEnde") {
+                alleObjekteArray.splice(0, alleObjekteArray.length);
+                Endabgabe.namensEingabe = prompt("Dein Punktestand: " + Endabgabe.punktestand + " Dein Name:");
+                Endabgabe.insert();
+                Endabgabe.refresh();
             }
         }
         Endabgabe.crc.fillStyle = "#78B9E5";
@@ -91,34 +95,35 @@ var Endabgabe;
             kugelfisch.draw();
         }
     }
-    function erstelleKleineLuftblasen() {
-        for (let i = 0; i <= 50; i++) {
-            let x = Math.random() * Endabgabe.canvas.width;
-            let y = Math.random() * Endabgabe.canvas.height;
-            let dy = Math.random() * -3 - 1;
-            let klein;
-            klein = new Endabgabe.KleineLuftblasen();
-            klein.x = x;
-            klein.y = y;
-            klein.dy = dy;
-            alleObjekteArray.push(klein);
-            klein.draw();
-        }
-    }
-    function erstelleGrosseLuftblasen() {
-        for (let i = 0; i <= 50; i++) {
-            let x = Math.random() * Endabgabe.canvas.width;
-            let y = Math.random() * Endabgabe.canvas.height;
-            let dy = Math.random() * -2 - 1;
-            let gross;
-            gross = new Endabgabe.GrosseLuftblasen();
-            gross.x = x;
-            gross.y = y;
-            gross.dy = dy;
-            alleObjekteArray.push(gross);
-            gross.draw();
-        }
-    }
+    /* function erstelleKleineLuftblasen(): void {
+         for (let i: number = 0; i <= 50; i++) {
+             let x: number = Math.random() * canvas.width;
+             let y: number = Math.random() * canvas.height;
+             let dy: number = Math.random() * -3 - 1;
+             let klein: KleineLuftblasen;
+             klein = new KleineLuftblasen();
+             klein.x = x;
+             klein.y = y;
+             klein.dy = dy;
+             alleObjekteArray.push(klein);
+             klein.draw();
+         }
+     }
+ 
+     function erstelleGrosseLuftblasen(): void {
+         for (let i: number = 0; i <= 50; i++) {
+             let x: number = Math.random() * canvas.width;
+             let y: number = Math.random() * canvas.height;
+             let dy: number = Math.random() * -2 - 1;
+             let gross: GrosseLuftblasen;
+             gross = new GrosseLuftblasen();
+             gross.x = x;
+             gross.y = y;
+             gross.dy = dy;
+             alleObjekteArray.push(gross);
+             gross.draw();
+         }
+     } */
     //Hintergrund
     function zeichneHintergrund() {
         let wasser = new Path2D();
@@ -229,11 +234,6 @@ var Endabgabe;
                 spielerfisch.dy = 0;
                 break;
         }
-    }
-    function spielZuEnde() {
-        Endabgabe.namensEingabe = prompt("Punktestand: " + Endabgabe.punktestand, "Gib hier deinen Namen ein:");
-        Endabgabe.insert();
-        Endabgabe.refresh();
     }
 })(Endabgabe || (Endabgabe = {}));
 //# sourceMappingURL=main.js.map

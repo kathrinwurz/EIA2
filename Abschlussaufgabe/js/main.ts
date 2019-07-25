@@ -33,6 +33,9 @@ namespace Endabgabe {
         canvas = document.getElementsByTagName("canvas")[0];
         crc = canvas.getContext("2d");
 
+        insert();
+        refresh();
+
         zeichneHintergrund();
 
         imageData = crc.getImageData(0, 0, canvas.width, canvas.height);
@@ -44,8 +47,8 @@ namespace Endabgabe {
 
         erstelleGrosseFische();
         erstelleKugelfische();
-        erstelleKleineLuftblasen();
-        erstelleGrosseLuftblasen();
+        //erstelleKleineLuftblasen();
+        //erstelleGrosseLuftblasen();
 
         update();
         console.log(alleObjekteArray);
@@ -60,16 +63,18 @@ namespace Endabgabe {
         crc.putImageData(imageData, 0, 0);
 
         spielerfisch.update();
-        if (punktestand == 110) {
-			namensEingabe = prompt("You win! " + "Dein Score: " + punktestand, "Your Player-Name");
-			spielZuEnde();
-		}
 
 
         for (let i: number = 0; i < alleObjekteArray.length; i++) {
             alleObjekteArray[i].update();
-            if (spielerfisch.zusammenstoss(alleObjekteArray[i]) == true) {
+            if (spielerfisch.zusammenstoss(alleObjekteArray[i]) == "tot") {
                 alleObjekteArray.splice(i, 1);
+            }
+            else if (spielerfisch.zusammenstoss(alleObjekteArray[i]) == "spielEnde") {
+                alleObjekteArray.splice(0, alleObjekteArray.length);
+                namensEingabe = prompt("Dein Punktestand: " + punktestand + " Dein Name:" );
+                insert();
+                refresh();  
             }
 
         }
@@ -127,7 +132,7 @@ namespace Endabgabe {
         }
     }
 
-    function erstelleKleineLuftblasen(): void {
+   /* function erstelleKleineLuftblasen(): void {
         for (let i: number = 0; i <= 50; i++) {
             let x: number = Math.random() * canvas.width;
             let y: number = Math.random() * canvas.height;
@@ -155,7 +160,7 @@ namespace Endabgabe {
             alleObjekteArray.push(gross);
             gross.draw();
         }
-    }
+    } */
 
 
 
@@ -291,13 +296,6 @@ namespace Endabgabe {
                 break;
         }
     }
-
-
-    function spielZuEnde (): void {
-        namensEingabe = prompt("Punktestand: " + punktestand, "Gib hier deinen Namen ein:");
-		insert();
-		refresh();
-	}
 
 
 }

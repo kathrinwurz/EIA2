@@ -40,13 +40,13 @@ namespace Endabgabe {
             let fischSpielerArray: Spieler[] = JSON.parse(xhr.response);
             
 
-            document.getElementById("bestenListeID").innerHTML = "";
+            document.getElementById("nameID").innerHTML = "";
+            document.getElementById("punktestandID").innerHTML = "";
 
-            for (let i: number = fischSpielerArray.length; i < 5; i++) {
-                let neuerSpieler = document.createElement("div");
-                document.getElementById("bestenListeID").appendChild(neuerSpieler);
-                neuerSpieler.setAttribute("id", i.toString());
-                neuerSpieler.innerHTML += `${fischSpielerArray[i].name} : ${fischSpielerArray[i].punktestand}`;
+
+            for (let i: number = fischSpielerArray.length-5; i < fischSpielerArray.length; i++) {
+    
+                document.getElementById("nameID").innerHTML += `<div>${fischSpielerArray[i].name} : ${fischSpielerArray[i].punktestand} </div>`;
             }
 
             /* let output: HTMLTextAreaElement = document.getElementsByTagName("textarea")[0];

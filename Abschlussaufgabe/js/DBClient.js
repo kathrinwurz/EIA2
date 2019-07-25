@@ -34,12 +34,10 @@ var Endabgabe;
         let xhr = _event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
             let fischSpielerArray = JSON.parse(xhr.response);
-            document.getElementById("bestenListeID").innerHTML = "";
-            for (let i = fischSpielerArray.length; i < 5; i++) {
-                let neuerSpieler = document.createElement("div");
-                document.getElementById("bestenListeID").appendChild(neuerSpieler);
-                neuerSpieler.setAttribute("id", i.toString());
-                neuerSpieler.innerHTML += `${fischSpielerArray[i].name} : ${fischSpielerArray[i].punktestand}`;
+            document.getElementById("nameID").innerHTML = "";
+            document.getElementById("punktestandID").innerHTML = "";
+            for (let i = fischSpielerArray.length - 5; i < fischSpielerArray.length; i++) {
+                document.getElementById("nameID").innerHTML += `<div>${fischSpielerArray[i].name} : ${fischSpielerArray[i].punktestand} </div>`;
             }
             /* let output: HTMLTextAreaElement = document.getElementsByTagName("textarea")[0];
             output.value = xhr.response;

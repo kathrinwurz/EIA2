@@ -83,22 +83,24 @@ namespace Endabgabe {
         }
 
 
-        zusammenstoss(fisch: AlleObjekte): boolean {
-            if (Math.sqrt(Math.pow(Math.abs(this.x - fisch.x), 2) + Math.pow(Math.abs(this.y - fisch.y), 2)) < 60 && fisch.groesse > 0) {
+        zusammenstoss(fisch: AlleObjekte): string {
+            let xAbstand: number = Math.abs (this.x - fisch.x);
+            let yAbstand: number = Math.abs (this.y - fisch.y);
+            if (Math.sqrt(Math.pow(xAbstand, 2) + Math.pow(yAbstand, 2)) < 60) {
                 if (this.groesse > fisch.groesse) {
                     this.groesse++;
                     punktestand += 10;
-                    return true;
+                    return "tot";
                 }
 
                 else {
                     alert("Du hast verloren!");
-                    return false;
+                    return "spielEnde";
                 }
 
             }
 
-            else return false;
+            else return "nix";
         }
 
         move(): void {
