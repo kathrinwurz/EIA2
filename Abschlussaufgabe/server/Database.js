@@ -15,7 +15,7 @@ let spielerListenArray;
 // running on heroku?
 if (process.env.NODE_ENV == "production") {
     // databaseURL = "mongodb+srv://username:password@hostname:port/database";
-    databaseURL = "mongodb+srv://kathrinsmongo:<password>@kathrin-eia2-k9lfi.mongodb.net/eia2spiel";
+    databaseURL = "mongodb+srv://kathrinsmongo:12345@kathrin-eia2-k9lfi.mongodb.net/eia2spiel";
     databaseName = "eia2spiel";
 }
 // try to connect to database, then activate callback "handleConnect" 
