@@ -17,6 +17,7 @@ namespace Endabgabe {
     export let canvas: HTMLCanvasElement;
 
 
+    export let timer: number;
     export let punktestand: number = 0;
     export let namensEingabe: string;
 
@@ -33,7 +34,6 @@ namespace Endabgabe {
         canvas = document.getElementsByTagName("canvas")[0];
         crc = canvas.getContext("2d");
 
-        insert();
         refresh();
 
         zeichneHintergrund();
@@ -58,7 +58,7 @@ namespace Endabgabe {
 
     //Update-Funktion
     function update(): void {
-        window.setTimeout(update, 1000 / fps);
+        timer = window.setTimeout(update, 1000 / fps);
         crc.clearRect(0, 0, canvas.width, canvas.height)
         crc.putImageData(imageData, 0, 0);
 
@@ -71,8 +71,10 @@ namespace Endabgabe {
                 alleObjekteArray.splice(i, 1);
             }
             else if (spielerfisch.zusammenstoss(alleObjekteArray[i]) == "spielEnde") {
-                alleObjekteArray.splice(0, alleObjekteArray.length);
-                namensEingabe = prompt("Dein Punktestand: " + punktestand + " Dein Name:" );
+                //alleObjekteArray.splice(0, alleObjekteArray.length);
+                window.clearTimeout (timer);
+                alert("Oh no, du hast verloren!");
+                namensEingabe = prompt("Du hast " + punktestand + " Punkte erreicht! " + "Trag hier deinen Namen ein:" );
                 insert();
                 refresh();  
             }
@@ -82,6 +84,10 @@ namespace Endabgabe {
                 crc.fillStyle = "#78B9E5";
                 crc.font = "25px Barrio";
                 crc.fillText ("Punktestand: " + punktestand.toString(), 770, 40);
+
+                if (alleObjekteArray.length == 0) {
+                    spielzuEnde();
+                }
 
 
     }
@@ -245,6 +251,14 @@ namespace Endabgabe {
 
 
 
+    export function spielzuEnde (){
+        window.clearTimeout (timer);
+        namensEingabe = prompt("Yeah, du hast gewonnen! Du hast " + punktestand + "Punkte erreicht. Trag' hier deinen Namen ein:" );
+                    
+                insert();
+                refresh();
+
+    }
 
     function spielerFischBewegung(e: KeyboardEvent): void {
 

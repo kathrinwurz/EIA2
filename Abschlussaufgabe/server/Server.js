@@ -31,7 +31,7 @@ function handleRequest(_request, _response) {
                 punktestand: parseInt(query["punktestand"])
             };
             Database.insert(spieler);
-            respond(_response, "storing data");
+            respond(_response, "Check!");
             break;
         case "refresh":
             Database.findAll(findCallback);

@@ -39,7 +39,7 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
                 punktestand: parseInt(query["punktestand"])
             };
             Database.insert(spieler);
-            respond(_response, "storing data");
+            respond(_response, "Check!");
             break;
         case "refresh":
             Database.findAll(findCallback);

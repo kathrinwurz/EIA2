@@ -1,6 +1,7 @@
 
 html {
     background-image: linear-gradient(to right, #6ab0f2, #5c9ad5, #4e85b9, #40709e, #335c83);
+    font-family: 'Barrio', cursive;
 }
 
 
@@ -13,7 +14,6 @@ h1 {
     margin: 30px;
     text-align: center;
     font-size: 60px;
-    font-family: 'Barrio', cursive;
     color: #99CFF4;
 }
 
@@ -23,4 +23,17 @@ p {
     margin-left: 45px;
     margin-bottom: 20px;
     color: #99CFF4;
+}
+
+
+div {
+    font-size: 30px;
+    width: 200px;
+    color: #99CFF4;
+    float: right;
+    right: 50px;
+}
+
+div.span {
+    font-size: 20px;
 }

@@ -65,8 +65,11 @@ var Endabgabe;
         }
         move() {
             this.x += this.dx;
-            if (this.x + 50 > Endabgabe.canvas.width + 100) {
-                this.x = 0;
+            if (this.x > Endabgabe.canvas.width + 50) {
+                this.x = -50;
+            }
+            if (this.x < -50) {
+                this.x = Endabgabe.canvas.width + 50;
             }
         }
     }

@@ -79,8 +79,13 @@ namespace Endabgabe {
 
         move(): void {
             this.x += this.dx;
-            if (this.x + 50 > canvas.width + 100) {
-                this.x = 0;
+            if (this.x  > canvas.width + 50) {
+                this.x = -50;
+                
+            }
+
+            if (this.x < -50) {
+                this.x = canvas.width +50;
             }
         }
     }

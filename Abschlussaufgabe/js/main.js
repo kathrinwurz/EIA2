@@ -17,7 +17,6 @@ var Endabgabe;
     function init() {
         Endabgabe.canvas = document.getElementsByTagName("canvas")[0];
         Endabgabe.crc = Endabgabe.canvas.getContext("2d");
-        Endabgabe.insert();
         Endabgabe.refresh();
         zeichneHintergrund();
         imageData = Endabgabe.crc.getImageData(0, 0, Endabgabe.canvas.width, Endabgabe.canvas.height);
@@ -32,7 +31,7 @@ var Endabgabe;
     }
     //Update-Funktion
     function update() {
-        window.setTimeout(update, 1000 / fps);
+        Endabgabe.timer = window.setTimeout(update, 1000 / fps);
         Endabgabe.crc.clearRect(0, 0, Endabgabe.canvas.width, Endabgabe.canvas.height);
         Endabgabe.crc.putImageData(imageData, 0, 0);
         spielerfisch.update();
@@ -42,8 +41,10 @@ var Endabgabe;
                 alleObjekteArray.splice(i, 1);
             }
             else if (spielerfisch.zusammenstoss(alleObjekteArray[i]) == "spielEnde") {
-                alleObjekteArray.splice(0, alleObjekteArray.length);
-                Endabgabe.namensEingabe = prompt("Dein Punktestand: " + Endabgabe.punktestand + " Dein Name:");
+                //alleObjekteArray.splice(0, alleObjekteArray.length);
+                window.clearTimeout(Endabgabe.timer);
+                alert("Oh no, du hast verloren!");
+                Endabgabe.namensEingabe = prompt("Du hast " + Endabgabe.punktestand + " Punkte erreicht! " + "Trag hier deinen Namen ein:");
                 Endabgabe.insert();
                 Endabgabe.refresh();
             }
@@ -51,6 +52,9 @@ var Endabgabe;
         Endabgabe.crc.fillStyle = "#78B9E5";
         Endabgabe.crc.font = "25px Barrio";
         Endabgabe.crc.fillText("Punktestand: " + Endabgabe.punktestand.toString(), 770, 40);
+        if (alleObjekteArray.length == 0) {
+            spielzuEnde();
+        }
     }
     //Generierung Objekte
     function erstelleGrosseFische() {
@@ -194,6 +198,13 @@ var Endabgabe;
             Endabgabe.crc.stroke(grashalm3);
         }
     }
+    function spielzuEnde() {
+        window.clearTimeout(Endabgabe.timer);
+        Endabgabe.namensEingabe = prompt("Yeah, du hast gewonnen! Du hast " + Endabgabe.punktestand + "Punkte erreicht. Trag' hier deinen Namen ein:");
+        Endabgabe.insert();
+        Endabgabe.refresh();
+    }
+    Endabgabe.spielzuEnde = spielzuEnde;
     function spielerFischBewegung(e) {
         switch (e.keyCode) {
             // links

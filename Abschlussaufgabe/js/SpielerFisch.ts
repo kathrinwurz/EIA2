@@ -89,12 +89,13 @@ namespace Endabgabe {
             if (Math.sqrt(Math.pow(xAbstand, 2) + Math.pow(yAbstand, 2)) < 60) {
                 if (this.groesse > fisch.groesse) {
                     this.groesse++;
-                    punktestand += 10;
+                    punktestand += 20;
                     return "tot";
                 }
 
                 else {
-                    alert("Du hast verloren!");
+                    
+                    
                     return "spielEnde";
                 }
 

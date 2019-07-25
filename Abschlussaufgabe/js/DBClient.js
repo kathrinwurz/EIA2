@@ -35,14 +35,9 @@ var Endabgabe;
         if (xhr.readyState == XMLHttpRequest.DONE) {
             let fischSpielerArray = JSON.parse(xhr.response);
             document.getElementById("nameID").innerHTML = "";
-            document.getElementById("punktestandID").innerHTML = "";
             for (let i = fischSpielerArray.length - 5; i < fischSpielerArray.length; i++) {
-                document.getElementById("nameID").innerHTML += `<div>${fischSpielerArray[i].name} : ${fischSpielerArray[i].punktestand} </div>`;
+                document.getElementById("nameID").innerHTML += `<div>${fischSpielerArray[i].name}: ${fischSpielerArray[i].punktestand} </div>`;
             }
-            /* let output: HTMLTextAreaElement = document.getElementsByTagName("textarea")[0];
-            output.value = xhr.response;
-            let responseAsJson: JSON = JSON.parse(xhr.response);
-            console.log(responseAsJson); */
         }
     }
 })(Endabgabe || (Endabgabe = {}));
