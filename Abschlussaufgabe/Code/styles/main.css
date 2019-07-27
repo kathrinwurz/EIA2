@@ -1,0 +1,47 @@
+
+html {
+    background-image: linear-gradient(to right, #6ab0f2, #5c9ad5, #4e85b9, #40709e, #335c83);
+    font-family: 'Barrio', cursive;
+}
+
+
+#canvas {
+    border: 5px solid #78B9E5;
+    margin-left: 80px;
+}
+
+h1 {
+    margin: 30px;
+    text-align: center;
+    font-size: 60px;
+    color: #99CFF4;
+}
+
+p {
+    font-family: 'Delius', cursive;
+    width: 1000px;
+    margin-left: 85px;
+    margin-bottom: 20px;
+    color: #99CFF4;
+}
+
+h4 {
+    font-size: 40px;
+    width: 200px;
+    color: #99CFF4;
+    float: right;
+    margin: 20px;
+    padding-right: 80px;
+    top: 90px;
+}
+
+
+div {
+    font-size: 30px;
+    width: 200px;
+    color: #99CFF4;
+    float: right;
+    padding-right: 80px;
+}
+
+
